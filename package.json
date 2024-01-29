@@ -10,8 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@leeyc/eslint": "workspace:*",
-    "@leeyc/prettier": "workspace:^",
+    "@leeyc/eslint-config": "workspace:*",
+    "@leeyc/typescript-config": "workspace:*",
+    "prettier": "^3.1.1",
     "turbo": "^1.11.3"
   }
 }

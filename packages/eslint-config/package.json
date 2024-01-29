@@ -1,0 +1,25 @@
+{
+  "name": "@leeyc/eslint-config",
+  "version": "1.0.0",
+  "private": true,
+  "files": [
+    "library.js",
+    "next.js",
+    "react-internal.js"
+  ],
+  "description": "leeyc package eslint config 파일입니다",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-turbo": "^1.11.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-config-prettier": "^9.1.0",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "typescript": "^5.3.3"
+  }
+}
