@@ -1,24 +1,17 @@
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  ignorePatterns: ["dist"],
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:import/recommended",
-    "plugin:react/recocmmended",
-  ],
-  parser: "@typescript-eslint/parser",
+  extends: ["eslint:recommended", "eslint-config-turbo", "plugin:@typescript-eslint/recommended", "plugin:import/typescript", "plugin:import/recommended", "plugin:react/recommended"],
+  plugins: ["react", "@typescript-eslint", "import", "sort-destructure-keys"],
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "import", "sort-destructure-keys"],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   settings: {
     "import/resolver": {
       typescript: {
@@ -26,6 +19,10 @@ module.exports = {
       },
     },
   },
+  ignorePatterns: [
+    "node_modules/",
+    "dist/",
+  ],
   rules: {
     "import/order": [
       "error",

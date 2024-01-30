@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from 'next/link';
 import {
   ComponentPropsWithRef,
   ComponentPropsWithoutRef,
@@ -33,5 +34,9 @@ const Button = <T extends ElementType = "button">({
     </Component>
   );
 };
+
+const handleClick = () => {};
+
+
 
 export default Button;
