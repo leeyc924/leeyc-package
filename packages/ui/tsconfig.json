@@ -1,0 +1,14 @@
+
+{
+  "extends": "@leeyc/typescript-config/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@components": ["components/index.ts"],
+      "@types": ["types/index.ts"],
+      "@hooks": ["hooks/index.ts"]
+    }
+  }
+}

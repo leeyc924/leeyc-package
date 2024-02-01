@@ -1,0 +1,4 @@
+
+{
+  "extends": "@leeyc/typescript-config/base.json"
+}

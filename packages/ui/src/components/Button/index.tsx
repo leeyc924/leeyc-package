@@ -1,42 +1,28 @@
-import React from "react";
-import NextLink from 'next/link';
-import {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  ElementType,
-  ReactNode,
-} from "react";
+import React, { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 
 export interface ButtonProps {
   children: ReactNode;
-} 
+}
 
-type PolymorphicComponentProps<
-  T extends ElementType,
-  Props = Record<string, unknown>,
-> = { component?: T } & ComponentPropsWithoutRef<T> &
+type PolymorphicComponentProps<T extends ElementType, Props = Record<string, unknown>> = {
+  component?: T;
+} & ComponentPropsWithoutRef<T> &
   Props & {
-    ref?: ComponentPropsWithRef<T>["ref"];
+    ref?: ComponentPropsWithRef<T>['ref'];
   };
-  
-const Button = <T extends ElementType = "button">({
-  component, 
+
+const Button = <T extends ElementType = 'button'>({
   children,
+  component,
   ...otherProps
 }: PolymorphicComponentProps<T, ButtonProps>) => {
-  const Component = component || "button";
+  const Component = component || 'button';
+
   return (
-    <Component
-      {...(Component === "button" && { type: "button" })}
-      {...otherProps}
-    >
+    <Component {...(Component === 'button' && { type: 'button' })} {...otherProps}>
       {children}
     </Component>
   );
 };
-
-const handleClick = () => {};
-
-
 
 export default Button;
