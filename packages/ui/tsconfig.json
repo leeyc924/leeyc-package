@@ -1,6 +1,6 @@
 
 {
-  "extends": "@leeyc/typescript-config/react-library.json",
+  "extends": "@breadlee/tsconfig/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {

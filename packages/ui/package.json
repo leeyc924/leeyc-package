@@ -1,5 +1,5 @@
 {
-  "name": "@leeyc/ui",
+  "name": "@breadlee/ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,8 +14,8 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@leeyc/eslint-config": "workspace:^",
-    "@leeyc/typescript-config": "workspace:^",
+    "@breadlee/eslint-config": "workspace:*",
+    "@breadlee/tsconfig": "workspace:*",
     "@types/node": "^20.11.7",
     "@types/react": "^18.2.48",
     "typescript": "^5.3.3"

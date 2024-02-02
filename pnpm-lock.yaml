@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@leeyc/eslint-config':
+      '@breadlee/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
-      '@leeyc/typescript-config':
+      '@breadlee/tsconfig':
         specifier: workspace:*
-        version: link:packages/typescript-config
+        version: link:packages/tsconfig
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -60,9 +60,7 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(eslint@8.56.0)
 
-  packages/prettier: {}
-
-  packages/typescript-config: {}
+  packages/tsconfig: {}
 
   packages/ui:
     dependencies:
@@ -73,12 +71,12 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
     devDependencies:
-      '@leeyc/eslint-config':
-        specifier: workspace:^
+      '@breadlee/eslint-config':
+        specifier: workspace:*
         version: link:../eslint-config
-      '@leeyc/typescript-config':
-        specifier: workspace:^
-        version: link:../typescript-config
+      '@breadlee/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/node':
         specifier: ^20.11.7
         version: 20.11.14

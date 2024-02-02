@@ -1,6 +1,6 @@
 {
-  "name": "@leeyc/eslint-config",
-  "version": "1.0.0",
+  "name": "@breadlee/eslint-config",
+  "version": "0.0.1",
   "description": "leeyc package eslint config 파일입니다",
   "main": "index.js",
   "publishConfig": {
