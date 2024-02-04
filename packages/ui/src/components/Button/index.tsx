@@ -1,15 +1,9 @@
-import React, { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react';
+import { PolymorphicComponentProps } from '@types';
 
 export interface ButtonProps {
   children: ReactNode;
 }
-
-type PolymorphicComponentProps<T extends ElementType, Props = Record<string, unknown>> = {
-  component?: T;
-} & ComponentPropsWithoutRef<T> &
-  Props & {
-    ref?: ComponentPropsWithRef<T>['ref'];
-  };
 
 const Button = <T extends ElementType = 'button'>({
   children,

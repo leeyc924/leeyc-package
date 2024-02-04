@@ -1,0 +1,23 @@
+{
+  "name": "@breaadlee/icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "mkdir -p dist && bash scripts/generate-constants.sh"
+  },
+  "keywords": [],
+  "author": "leeyc",
+  "license": "ISC",
+  "devDependencies": {
+    "@breadlee/eslint-config": "workspace:*",
+    "@breadlee/tsconfig": "workspace:*",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.56.0",
+    "fantasticon": "^2.0.0",
+    "oslllo-svg-fixer": "^3.0.0",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,13 +1,13 @@
 {
   "name": "@breadlee/eslint-config",
   "version": "0.0.1",
-  "description": "leeyc package eslint config 파일입니다",
+  "description": "leeyc package eslint config",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "keywords": [],
-  "author": "",
+  "author": "leeyc",
   "license": "ISC",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.19.1",
