@@ -16,8 +16,10 @@
   "devDependencies": {
     "@breadlee/eslint-config": "workspace:*",
     "@breadlee/tsconfig": "workspace:*",
+    "@breadlee/icons": "workspace:*",
     "@types/node": "^20.11.7",
     "@types/react": "^18.2.48",
+    "rollup": "^4.9.6",
     "typescript": "^5.3.3"
   }
 }

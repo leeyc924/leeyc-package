@@ -78,6 +78,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
+      clean-css-cli:
+        specifier: ^5.6.3
+        version: 5.6.3
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -111,6 +114,9 @@ importers:
       '@breadlee/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@breadlee/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@breadlee/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1755,6 +1761,24 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /clean-css-cli@5.6.3:
+    resolution: {integrity: sha512-MUAta8pEqA/d2DKQwtZU5nm0Og8TCyAglOx3GlWwjhGdKBwY4kVF6E5M6LU/jmmuswv+HbYqG/dKKkq5p1dD0A==}
+    engines: {node: '>= 10.12.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      clean-css: 5.3.3
+      commander: 7.2.0
+      glob: 7.2.3
+    dev: true
+
+  /clean-css@5.3.3:
+    resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
+    engines: {node: '>= 10.0'}
+    dependencies:
+      source-map: 0.6.1
+    dev: true
+
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -1807,6 +1831,11 @@ packages:
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /commander@7.2.0:
+    resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
+    engines: {node: '>= 10'}
     dev: true
 
   /commander@9.5.0:

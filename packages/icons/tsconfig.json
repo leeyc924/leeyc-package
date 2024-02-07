@@ -1,3 +1,7 @@
 {
   "extends": "@breadlee/tsconfig/react-library.json",
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
 }

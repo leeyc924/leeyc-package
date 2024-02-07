@@ -1,19 +1,28 @@
 {
   "name": "@breadlee/icons",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "leeyc package icon",
+  "sideEffects": false,
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "prebuild": "mkdir -p dist && bash scripts/generate-constants.sh"
+    "build": "tsup && fantasticon",
+    "prebuild": "mkdir -p dist && bash scripts/generate-constants.sh",
+    "postbuild": "pnpm run minify && node scripts/postbuild.js",
+    "minify": "cleancss -o ./dist/icons.css ./dist/icons.css"
   },
-  "keywords": [],
-  "author": "leeyc",
-  "license": "ISC",
   "devDependencies": {
     "@breadlee/eslint-config": "workspace:*",
     "@breadlee/tsconfig": "workspace:*",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "clean-css-cli": "^5.6.3",
     "eslint": "^8.56.0",
     "fantasticon": "^2.0.0",
     "oslllo-svg-fixer": "^3.0.0",
