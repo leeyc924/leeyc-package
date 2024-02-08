@@ -8,7 +8,7 @@ export interface IconProps {
   color?: CSSProperties['color'];
 }
 
-const Icon = ({ color = '#000', irName, name, size }: IconProps) => {
+const Icon = ({ color = '#000', irName, name, size = 24 }: IconProps) => {
   return (
     <i
       className={`icon icon-${name}`}
