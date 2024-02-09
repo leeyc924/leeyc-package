@@ -1,0 +1,13 @@
+{
+  "extends": "@breadlee/tsconfig/react-library.json",
+  "include": [".", "stories/**/*.ts", "stories/**/*.tsx"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["../../packages/ui/components/index.ts"],
+      "@types": ["../../packages/ui/types/index.ts"],
+      "@hooks": ["../../packages/ui/hooks/index.ts"],
+    }
+  }
+}
