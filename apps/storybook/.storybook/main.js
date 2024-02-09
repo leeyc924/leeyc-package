@@ -1,4 +1,5 @@
 import { mergeConfig } from "vite";
+import { resolve } from 'path';
 const UI_PATH = resolve("../../packages/ui");
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
