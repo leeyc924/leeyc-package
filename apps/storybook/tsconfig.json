@@ -5,9 +5,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components": ["../../packages/ui/components/index.ts"],
-      "@types": ["../../packages/ui/types/index.ts"],
-      "@hooks": ["../../packages/ui/hooks/index.ts"],
+      "@components": ["../../packages/ui/src/components/index.ts"],
+      "@types": ["../../packages/ui/src/types/index.ts"],
+      "@hooks": ["../../packages/ui/src/hooks/index.ts"],
     }
   }
 }

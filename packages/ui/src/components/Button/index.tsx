@@ -1,5 +1,6 @@
 import { ElementType, ReactNode } from 'react';
 import { PolymorphicComponentProps } from '@types';
+import { container } from './index.css';
 
 export interface ButtonProps {
   children: ReactNode;
@@ -13,7 +14,7 @@ const Button = <T extends ElementType = 'button'>({
   const Component = component || 'button';
 
   return (
-    <Component {...(Component === 'button' && { type: 'button' })} {...otherProps}>
+    <Component className={container} {...(Component === 'button' && { type: 'button' })} {...otherProps}>
       {children}
     </Component>
   );
