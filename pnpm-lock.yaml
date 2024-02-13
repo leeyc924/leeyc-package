@@ -178,6 +178,9 @@ importers:
       '@breadlee/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@breadlee/utils':
+        specifier: workspace:^
+        version: link:../utils
       '@rollup/plugin-commonjs':
         specifier: ^25.0.7
         version: 25.0.7(rollup@4.9.6)
@@ -208,6 +211,24 @@ importers:
       rollup-plugin-typescript2:
         specifier: ^0.36.0
         version: 0.36.0(rollup@4.9.6)(typescript@5.3.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
+  packages/utils:
+    devDependencies:
+      '@breadlee/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@breadlee/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(typescript@5.3.3)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
