@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clear-install": "bash scripts/clean-install/index.sh"
+    "clear-install": "bash scripts/clean-install/index.sh",
+    "typecheck": "turbo run typecheck"
   },
   "keywords": [],
   "author": "",

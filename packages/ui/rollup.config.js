@@ -33,6 +33,9 @@ const config = [
         exports: 'named',
         preserveModules: true,
         preserveModulesRoot: 'src',
+        assetFileNames({ name }) {
+          return name?.replace(/^src\//, '') ?? '';
+        },
       },
     ],
     external,
