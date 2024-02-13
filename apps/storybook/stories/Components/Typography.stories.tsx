@@ -3,7 +3,6 @@ import { Meta, StoryObj } from '@storybook/react';
 
 const story: Meta<TypographyProps> = {
   component: Typography,
-  title: 'Components/Typography',
   tags: ['autodocs'],
   parameters: {},
 };

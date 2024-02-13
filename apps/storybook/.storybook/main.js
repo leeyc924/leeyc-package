@@ -23,6 +23,10 @@ const config = {
       resolve: {
         alias: [
           {
+            find: '@styles',
+            replacement: `${UI_PATH}/src/styles`
+          },
+          {
             find: "@components",
             replacement: `${UI_PATH}/src/components`,
           },
@@ -33,6 +37,10 @@ const config = {
           {
             find: "@hooks",
             replacement: `${UI_PATH}/src/hooks`,
+          },
+          {
+            find: "@icons",
+            replacement: resolve("../../packages/icons/dist"),
           },
         ],
       },

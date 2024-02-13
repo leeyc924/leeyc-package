@@ -5,9 +5,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@styles": ["../../packages/ui/src/styles/index.ts"],
       "@components": ["../../packages/ui/src/components/index.ts"],
       "@types": ["../../packages/ui/src/types/index.ts"],
       "@hooks": ["../../packages/ui/src/hooks/index.ts"],
+      "@icons": ["../../packages/icons/dist"],
+      "@icons/*": ["../../packages/icons/dist/*"]
     }
   }
 }
