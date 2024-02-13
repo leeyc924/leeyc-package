@@ -53,7 +53,6 @@ const Typography = <T extends Tag = 'span'>({
         [styles.underline]: !!underline,
         [styles.ellipsisOneLine]: !!isEllipsisOneLine,
         [styles.ellipsisTwoLine]: !!isEllipsisTwoLine,
-        ...(color && { [palette[color]]: !!color }),
       })}
       {...otherProps}
     >
