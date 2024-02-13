@@ -1,6 +1,6 @@
 {
   "name": "@breadlee/icons",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "leeyc package icon",
   "sideEffects": false,
   "type": "module",
