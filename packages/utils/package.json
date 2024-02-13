@@ -1,6 +1,6 @@
 {
   "name": "@breadlee/utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,7 +11,8 @@
   "sideEffects": false,
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "typecheck": "tsc -b tsconfig.json"
   },
   "devDependencies": {
     "@breadlee/eslint-config": "workspace:^",
