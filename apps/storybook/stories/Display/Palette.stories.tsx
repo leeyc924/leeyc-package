@@ -54,8 +54,8 @@ const ColorItemList = ({ title }: { title: string }) => {
   const colors = Object.entries(palette).filter(([name]) => name.includes(title));
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ flex: '0 0 20%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div>
         <Typography color="Gray900" variant="H4">
           {title}
         </Typography>
@@ -78,7 +78,6 @@ const Palette = () => {
       <ColorItemList title="Error" />
       <ColorItemList title="Background" />
       <ColorItemList title="Surface" />
-      <ColorItemList title="Outline" />
       <ColorItemList title="Blue" />
       <ColorItemList title="Gray" />
       <ColorItemList title="Black" />
