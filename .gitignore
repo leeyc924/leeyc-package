@@ -4,10 +4,39 @@ node_modules
 *.log
 .next
 dist
-dist-ssr
+
 *.local
 .env
 .cache
-server/dist
-public/dist
+
 storybook-static/
+
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+analyze
