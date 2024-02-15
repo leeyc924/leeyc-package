@@ -7,7 +7,7 @@ import preserveDirective from 'rollup-plugin-preserve-directives';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json' assert { type: 'json' };
 
-const external = [...Object.keys(pkg.dependencies || {})];
+const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})];
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -33,8 +33,9 @@ const config = [
         exports: 'named',
         preserveModules: true,
         preserveModulesRoot: 'src',
-        assetFileNames({ name }) {
-          return name?.replace(/^src\//, '') ?? '';
+        assetFileNames(assetInfo) {
+          const assetPath = assetInfo.name.replace(/^src\//, 'css/');
+          return assetPath;
         },
       },
     ],
