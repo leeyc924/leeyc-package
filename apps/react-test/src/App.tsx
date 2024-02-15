@@ -1,13 +1,11 @@
-import { ThemeProvider, Typography, palette } from '@breadlee/ui';
+import { Typography } from '@breadlee/ui';
 import { useState } from 'react';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div style={{ color: palette.Background }}>
-        <Typography>test</Typography>
-      </div>
-    </ThemeProvider>
+    <div>
+      <Typography>test</Typography>
+    </div>
   );
 }
 
