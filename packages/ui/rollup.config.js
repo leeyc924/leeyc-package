@@ -31,6 +31,7 @@ const config = [
         dir: 'dist',
         format: 'esm',
         exports: 'named',
+        banner: arg => (/components\/[^/]+\/index.js/.test(arg.fileName) ? `'use client'` : ''),
         preserveModules: true,
         preserveModulesRoot: 'src',
         assetFileNames(assetInfo) {
