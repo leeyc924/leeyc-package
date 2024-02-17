@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ElementType, ReactNode, useMemo } from 'react';
 import { classnames } from '@breadlee/utils';
 import Typography, { TypographyProps } from '../Typography';
-import styles from './index.css';
+import * as styles from './index.css';
 
 interface ButtonOwnProps {
   children: ReactNode;
@@ -56,11 +56,11 @@ const Button = <E extends ElementType = 'button'>({
 
   return (
     <Component
+      {...(Component === 'button' && { type: 'button' })}
+      {...otherProps}
       className={classnames(styles.base, styles.color[color], styles.size[size], {
         [styles.fullWidth]: !!isFullWidth,
       })}
-      {...(Component === 'button' && { type: 'button' })}
-      {...otherProps}
     >
       {typeof children === 'string' ? (
         <Typography {...defaultTypographyProps} {...typographyProps}>

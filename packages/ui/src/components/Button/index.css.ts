@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { palette } from '../../styles';
 
-const base = style({
+export const base = style({
   display: 'inline-flex',
   alignItems: 'center',
   textAlign: 'center',
@@ -10,29 +10,29 @@ const base = style({
   borderRadius: 8,
 });
 
-const fullWidth = style({
+export const fullWidth = style({
   width: '100%',
 });
 
-const size = {
-  xlarge: style({
+export const size = styleVariants({
+  xlarge: {
     height: 52,
-  }),
-  large: style({
+  },
+  large: {
     height: 48,
-  }),
-  medium: style({
+  },
+  medium: {
     height: 40,
-  }),
-  small: style({
+  },
+  small: {
     height: 32,
     borderRadius: 4,
     padding: '0 12px',
-  }),
-};
+  },
+});
 
-const color = {
-  primary: style({
+export const color = styleVariants({
+  primary: {
     backgroundColor: palette.Primary,
     border: `1px solid ${palette.Primary}`,
     color: palette.PrimaryOn,
@@ -46,8 +46,8 @@ const color = {
       backgroundColor: palette.Gray500,
       border: `1px solid ${palette.Gray500}`,
     },
-  }),
-  secondary: style({
+  },
+  secondary: {
     backgroundColor: palette.Secondary,
     border: `1px solid ${palette.Secondary}`,
     color: palette.SecondaryOn,
@@ -61,8 +61,8 @@ const color = {
       backgroundColor: palette.Gray500,
       border: `1px solid ${palette.Gray500}`,
     },
-  }),
-  tertiary: style({
+  },
+  tertiary: {
     backgroundColor: palette.Tertiary,
     border: `1px solid ${palette.Tertiary}`,
     color: palette.TertiaryOn,
@@ -76,8 +76,8 @@ const color = {
       backgroundColor: palette.Gray500,
       border: `1px solid ${palette.Gray500}`,
     },
-  }),
-  error: style({
+  },
+  error: {
     backgroundColor: palette.Error,
     border: `1px solid ${palette.Error}`,
     color: palette.ErrorOn,
@@ -91,13 +91,5 @@ const color = {
       backgroundColor: palette.Gray500,
       border: `1px solid ${palette.Gray500}`,
     },
-  }),
-};
-
-const buttonStyle = {
-  base,
-  fullWidth,
-  size,
-  color,
-};
-export default buttonStyle;
+  },
+});

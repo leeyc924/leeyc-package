@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ElementType, ReactNode, memo } from 'react';
 import { classnames } from '@breadlee/utils';
-import { palette } from '@styles';
-import styles from './index.css';
+import { palette, font } from '@styles';
+import * as styles from './index.css';
 
 type Tag =
   | 'span'
@@ -21,7 +21,6 @@ type Tag =
   | 'address'
   | 'label'
   | 'figcaption';
-
 interface TypographyOwnProps {
   variant?: 'H1' | 'H2' | 'H3' | 'H4' | 'B1' | 'B2' | 'B3' | 'D1' | 'D2';
   weight?: 'bold' | 'medium' | 'regular';
@@ -50,19 +49,17 @@ const Typography = <E extends Tag = 'span'>({
 
   return (
     <Component
-      style={{ ...otherProps.style, ...(color && { color: palette[color] }) }}
-      className={classnames(styles.base, styles.variant[variant], styles.weight[weight], {
-        [styles.underline]: !!underline,
-        [styles.ellipsisOneLine]: !!isEllipsisOneLine,
-        [styles.ellipsisTwoLine]: !!isEllipsisTwoLine,
-      })}
       {...otherProps}
+      style={{ ...otherProps.style, ...(color && { color: palette[color] }) }}
+      className={classnames(styles.base, font.variant[variant], font.weight[weight], {
+        [font.underline]: !!underline,
+        [font.ellipsisOneLine]: !!isEllipsisOneLine,
+        [font.ellipsisTwoLine]: !!isEllipsisTwoLine,
+      })}
     >
       {children}
     </Component>
   );
 };
 
-Typography.displayName = 'Typography';
-
-export default memo(Typography);
+export default Typography;
