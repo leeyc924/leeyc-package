@@ -23,6 +23,7 @@ const theme = createThemeContract({
   SurfaceOn: null,
   SurfaceVariant: null,
   SurfaceVariantOn: null,
+  Outline: null,
 });
 
 createGlobalTheme("html[data-theme-mode='light']", theme, {
@@ -48,6 +49,7 @@ createGlobalTheme("html[data-theme-mode='light']", theme, {
   SurfaceOn: '#191c1d',
   SurfaceVariant: '#dbe4e7',
   SurfaceVariantOn: '#3f484b',
+  Outline: '#6f797b',
 });
 
 createGlobalTheme("html[data-theme-mode='dark']", theme, {
@@ -73,6 +75,7 @@ createGlobalTheme("html[data-theme-mode='dark']", theme, {
   SurfaceOn: '#e1e3e4',
   SurfaceVariant: '#3f484b',
   SurfaceVariantOn: '#bfc8cb',
+  Outline: '#899295',
 });
 
 const root = createGlobalTheme(':root', {

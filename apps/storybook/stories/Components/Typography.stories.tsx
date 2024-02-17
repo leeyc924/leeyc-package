@@ -11,6 +11,6 @@ export default story;
 
 export const Default: StoryObj<TypographyProps> = {
   args: {
-    children: 'Hello',
+    children: 'Typography',
   },
 };

@@ -11,6 +11,6 @@ export default story;
 
 export const Default: StoryObj<ButtonProps> = {
   args: {
-    children: '버튼명',
+    children: 'Button',
   },
 };

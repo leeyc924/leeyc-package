@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "dev": "storybook dev -p 5000",
-    "typecheck": "tsc -b tsconfig.json"
+    "typecheck": "tsc -b tsconfig.json",
+    "build": "storybook build",
+    "build:publish": "chromatic --project-token=chpt_98be66932c95ea8 -b build"
   },
   "dependencies": {
     "@breadlee/icons": "workspace:^",
@@ -24,6 +26,7 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@vanilla-extract/vite-plugin": "^4.0.4",
+    "chromatic": "^10.9.6",
     "eslint": "^8.56.0",
     "storybook": "^7.6.15",
     "typescript": "^5.3.3"

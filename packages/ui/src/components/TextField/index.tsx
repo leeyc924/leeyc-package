@@ -1,4 +1,12 @@
-import { ComponentPropsWithRef, FocusEventHandler, forwardRef, useCallback, useId, useState } from 'react';
+import {
+  ComponentPropsWithRef,
+  FocusEventHandler,
+  ForwardedRef,
+  forwardRef,
+  useCallback,
+  useId,
+  useState,
+} from 'react';
 import { classnames } from '@breadlee/utils';
 import Typography from '../Typography';
 import * as styles from './index.css';
@@ -12,7 +20,7 @@ export interface TextFieldProps extends ComponentPropsWithRef<'input'> {
 const TextField = forwardRef(
   (
     { onBlur, onFocus, placeholder, status, statusMessage, ...otherProps }: TextFieldProps,
-    ref: ComponentPropsWithRef<'input'>['ref'],
+    ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const uniqueId = useId();
     const [isFocus, setIsFocus] = useState(false);
