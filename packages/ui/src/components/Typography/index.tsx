@@ -1,7 +1,6 @@
-import { ElementType, ReactNode, memo } from 'react';
+import { ComponentPropsWithoutRef, ElementType, ReactNode, memo } from 'react';
 import { classnames } from '@breadlee/utils';
 import { palette } from '@styles';
-import { PolymorphicComponentProps } from '@types';
 import styles from './index.css';
 
 type Tag =
@@ -23,7 +22,7 @@ type Tag =
   | 'label'
   | 'figcaption';
 
-export interface TypographyProps {
+interface TypographyOwnProps {
   variant?: 'H1' | 'H2' | 'H3' | 'H4' | 'B1' | 'B2' | 'B3' | 'D1' | 'D2';
   weight?: 'bold' | 'medium' | 'regular';
   color?: keyof typeof palette;
@@ -33,7 +32,10 @@ export interface TypographyProps {
   isEllipsisTwoLine?: boolean;
 }
 
-const Typography = <T extends Tag = 'span'>({
+export type TypographyProps<E extends Tag = 'span'> = TypographyOwnProps &
+  Omit<ComponentPropsWithoutRef<E>, keyof TypographyOwnProps> & { component?: E };
+
+const Typography = <E extends Tag = 'span'>({
   children,
   color,
   component,
@@ -43,7 +45,7 @@ const Typography = <T extends Tag = 'span'>({
   variant = 'B2',
   weight = 'medium',
   ...otherProps
-}: PolymorphicComponentProps<T, TypographyProps>) => {
+}: TypographyProps<E>) => {
   const Component = (component || 'span') as ElementType;
 
   return (

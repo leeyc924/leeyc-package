@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType } from 'react';
+import { ComponentProps, ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType } from 'react';
 
 /** `T`의 모든 속성을 순회하며 optional로 수정 */
 export type DeepPartial<T> = {
@@ -33,14 +33,3 @@ export type Nullable<T> = T | null;
 
 /** 특정 key의 optional 해제 */
 export type RequiredKey<T, K extends keyof T> = Required<Pick<T, K>>[K];
-
-/**
- * 다형성 컴포넌트를 만들기위한 타입
- * ex) Button 컴포넌트에서 button element or anchor element 를 동시에 사용해야할때
- */
-export type PolymorphicComponentProps<T extends ElementType, PropsType = Record<string, unknown>> = {
-  component?: T;
-} & PropsType &
-  ComponentPropsWithoutRef<T> & {
-    ref?: ComponentPropsWithRef<T>['ref'];
-  };

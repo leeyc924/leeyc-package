@@ -1,10 +1,9 @@
-import { ElementType, ReactNode, useMemo } from 'react';
+import { ComponentPropsWithoutRef, ElementType, ReactNode, useMemo } from 'react';
 import { classnames } from '@breadlee/utils';
-import { PolymorphicComponentProps } from '@types';
 import Typography, { TypographyProps } from '../Typography';
 import styles from './index.css';
 
-export interface ButtonProps {
+interface ButtonOwnProps {
   children: ReactNode;
   color?: 'primary' | 'secondary' | 'tertiary' | 'error';
   size?: 'xlarge' | 'large' | 'medium' | 'small';
@@ -12,7 +11,10 @@ export interface ButtonProps {
   typographyProps?: Omit<TypographyProps, 'children'>;
 }
 
-const Button = <T extends ElementType = 'button'>({
+export type ButtonProps<E extends ElementType = 'button'> = ButtonOwnProps &
+  Omit<ComponentPropsWithoutRef<E>, keyof ButtonOwnProps> & { component?: E };
+
+const Button = <E extends ElementType = 'button'>({
   children,
   color = 'primary',
   component,
@@ -20,7 +22,7 @@ const Button = <T extends ElementType = 'button'>({
   size = 'medium',
   typographyProps,
   ...otherProps
-}: PolymorphicComponentProps<T, ButtonProps>) => {
+}: ButtonProps<E>) => {
   const Component = component || 'button';
 
   if (component && !(otherProps.href || otherProps.to)) {
