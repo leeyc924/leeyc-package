@@ -18,7 +18,7 @@ export default story;
 export const Default: StoryObj = {
   render() {
     return (
-      <div style={{ display: 'flex', fontSize: '2rem', gap: 10 }}>
+      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
         {icons.map(icon => (
           <div key={icon} title={icon}>
             <Icon name={icon} />

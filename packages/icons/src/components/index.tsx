@@ -11,10 +11,13 @@ export interface IconProps {
 const Icon = ({ color = '#000', irName, name, size = 24 }: IconProps) => {
   return (
     <i
-      className={`icon icon-${name}`}
+      className={`icon-${name}`}
       style={{
         fontSize: size,
         color,
+        display: 'inline-block',
+        lineHeight: 0,
+        position: 'relative',
       }}
     >
       {irName && (

@@ -6,5 +6,7 @@ export { default as TextField } from './TextField';
 export type { TextFieldProps } from './TextField';
 export { default as CheckBox } from './CheckBox';
 export type { CheckBoxProps } from './CheckBox';
+export { default as Calendar } from './Calendar';
+export type { CalendarProps } from './Calendar';
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as Test } from './Test';

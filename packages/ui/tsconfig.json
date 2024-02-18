@@ -7,7 +7,7 @@
     "paths": {
       "@components": ["components/index.ts"],
       "@types": ["types/index.ts"],
-      "@hooks": ["hooks/index.ts"],
+      "@hooks/*": ["hooks/*"],
       "@styles": ["styles/index.ts"],
     }
   }

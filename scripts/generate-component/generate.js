@@ -53,9 +53,14 @@ export const Default: StoryObj<${pascalComponentName}Props> = {
 };
 `;
 
+  fs.mkdirSync(COMPONENT_PATH);
+  console.log(`success ${pascalComponentName} directory`);
   fs.appendFileSync(`${COMPONENT_PATH}/index.tsx`, componentSnipet);
+  console.log('success index.tsx');
   fs.appendFileSync(`${COMPONENT_PATH}/index.css.ts`, styleSnipet);
+  console.log('success index.css.ts');
   fs.appendFileSync(`${STORYBOOK_PATH}.stories.tsx`, storybookSnipet);
+  console.log('success stories.tsx');
 }
 
 main();
