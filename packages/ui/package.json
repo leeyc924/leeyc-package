@@ -47,6 +47,7 @@
     "access": "public"
   },
   "dependencies": {
-    "dayjs": "^1.11.10"
+    "dayjs": "^1.11.10",
+    "focus-trap-react": "^10.2.3"
   }
 }

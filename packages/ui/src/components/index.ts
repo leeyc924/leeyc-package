@@ -8,5 +8,7 @@ export { default as CheckBox } from './CheckBox';
 export type { CheckBoxProps } from './CheckBox';
 export { default as Calendar } from './Calendar';
 export type { CalendarProps } from './Calendar';
+export { default as BottomSheet } from './BottomSheet';
+export type { BottomSheetProps } from './BottomSheet';
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as Test } from './Test';
