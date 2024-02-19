@@ -10,5 +10,7 @@ export { default as Calendar } from './Calendar';
 export type { CalendarProps } from './Calendar';
 export { default as BottomSheet } from './BottomSheet';
 export type { BottomSheetProps } from './BottomSheet';
+export { default as Tabs } from './Tabs';
+export type { TabsProps } from './Tabs';
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as Test } from './Test';
