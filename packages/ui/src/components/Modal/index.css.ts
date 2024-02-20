@@ -9,6 +9,10 @@ export const container = style({
   touchAction: 'none',
   width: '100%',
   height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 20,
 });
 
 export const dimmed = style({
@@ -25,21 +29,18 @@ export const dimmed = style({
 
 export const section = styleVariants({
   base: {
-    position: 'fixed',
+    position: 'relative',
     width: '100%',
-    bottom: 0,
-    left: 0,
     background: palette.White,
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
     padding: '20px 0',
-    borderRadius: '20px 20px 0px 0px',
+    borderRadius: 20,
+    maxHeight: '70%',
+    zIndex: 1,
   },
-  small: { maxHeight: '50%' },
-  meidum: { maxHeight: '70%' },
-  large: { maxHeight: '90%' },
 });
 
 export const header = style({
