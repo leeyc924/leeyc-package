@@ -5,7 +5,8 @@
   "scripts": {
     "clear-install": "bash scripts/clear-install/index.sh",
     "generate-component": "bash scripts/generate-component/index.sh",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "",

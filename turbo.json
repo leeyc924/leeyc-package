@@ -3,6 +3,9 @@
   "pipeline": {
     "typecheck": {
       "cache": false
+    },
+    "build": {
+      "cache": false
     }
   }
 }
