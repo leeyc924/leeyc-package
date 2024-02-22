@@ -8,7 +8,7 @@
       "@styles": ["../../packages/ui/src/styles/index.ts"],
       "@components": ["../../packages/ui/src/components/index.ts"],
       "@types": ["../../packages/ui/src/types/index.ts"],
-      "@hooks": ["../../packages/ui/src/hooks/index.ts"],
+      "@hooks/*": ["../../packages/ui/src/hooks/*"],
       "@icons": ["../../packages/icons/dist"],
       "@icons/*": ["../../packages/icons/dist/*"]
     }
