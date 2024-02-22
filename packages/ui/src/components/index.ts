@@ -17,4 +17,3 @@ export type { ModalProps } from './Modal';
 export { default as Tabs } from './Tabs';
 export type { TabsProps } from './Tabs';
 export { default as ThemeProvider } from './ThemeProvider';
-export { default as Test } from './Test';

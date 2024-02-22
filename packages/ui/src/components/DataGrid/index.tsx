@@ -70,46 +70,38 @@ const DataGrid = ({ columns, dataGridTitleLabel, rows }: DataGridProps) => {
     }
 
     function renderItem(column: DataGridColumn, width: number, row?: DataGridRow) {
-      const queue = [column];
-      while (queue.length) {
-        const search = queue.shift();
-        if (!search) {
-          break;
-        }
-
-        if (!search.children || search.children?.length === 0) {
-          if (row) {
-            const data = row[column.id];
-            return <RowItem column={search} key={search.id} rowItem={data} />;
-          }
-
-          return <ColumnItem column={search} key={search.id} />;
-        }
-
-        const childWidth = width / search.children.length;
-
+      if (!column.children || column.children?.length === 0) {
         if (row) {
-          return (
-            <div className={classnames(styles.columnGroup['base'], styles.columnGroup['body'])} key={column.id}>
-              <div
-                className={classnames(styles.columnGroup['cells'], styles.columnGroup['body'])}
-                style={{ maxWidth: width }}
-              >
-                {search.children.map(child => renderItem(child, childWidth, row))}
-              </div>
-            </div>
-          );
+          const data = row[column.id];
+          return <RowItem column={column} key={column.id} rowItem={data} />;
         }
 
+        return <ColumnItem column={column} key={column.id} />;
+      }
+
+      const childWidth = width / column.children.length;
+
+      if (row) {
         return (
           <div className={classnames(styles.columnGroup['base'], styles.columnGroup['body'])} key={column.id}>
-            <ColumnItem column={column} isGroup />
-            <div className={classnames(styles.columnGroup['cells'])} style={{ maxWidth: width }}>
-              {search.children.map(child => renderItem(child, childWidth, row))}
+            <div
+              className={classnames(styles.columnGroup['cells'], styles.columnGroup['body'])}
+              style={{ maxWidth: width }}
+            >
+              {column.children.map(child => renderItem(child, childWidth, row))}
             </div>
           </div>
         );
       }
+
+      return (
+        <div className={classnames(styles.columnGroup['base'], styles.columnGroup['body'])} key={column.id}>
+          <ColumnItem column={column} isGroup />
+          <div className={classnames(styles.columnGroup['cells'])} style={{ maxWidth: width }}>
+            {column.children.map(child => renderItem(child, childWidth, row))}
+          </div>
+        </div>
+      );
     }
 
     const flexWidth = totalFlexWidth / totalFlex;
