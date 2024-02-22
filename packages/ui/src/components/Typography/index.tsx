@@ -55,6 +55,7 @@ const Typography = <E extends Tag = 'span'>({
         [font.underline]: !!underline,
         [font.ellipsisOneLine]: !!isEllipsisOneLine,
         [font.ellipsisTwoLine]: !!isEllipsisTwoLine,
+        [`${otherProps.className}`]: !!otherProps.className,
       })}
     >
       {children}
