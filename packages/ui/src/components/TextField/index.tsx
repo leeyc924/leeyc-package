@@ -14,7 +14,6 @@ import * as styles from './index.css';
 export interface TextFieldProps extends ComponentPropsWithRef<'input'> {
   status?: 'success' | 'error';
   statusMessage?: string;
-  isSuccess?: boolean;
 }
 
 const TextField = forwardRef(
