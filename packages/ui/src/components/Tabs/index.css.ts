@@ -9,7 +9,7 @@ export const container = style({
 export const tabItem = styleVariants({
   base: {
     flex: 1,
-    borderBottom: `1px solid ${palette.Gray700}`,
+    borderBottom: `1px solid ${palette.SurfaceOn}`,
   },
   select: {
     borderBottom: `1px solid ${palette.Primary}`,

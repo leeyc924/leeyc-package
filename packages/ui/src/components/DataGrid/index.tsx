@@ -165,7 +165,7 @@ const ColumnItem = ({ column, isGroup }: { column: DataGridColumn; isGroup?: boo
     >
       <Typography
         className={styles.columnItem[column.align || 'center']}
-        color="PrimaryOn"
+        color="SurfaceOn"
         variant="D1"
         weight="medium"
         isEllipsisOneLine
@@ -198,7 +198,7 @@ const RowItem = ({ column, rowItem }: { rowItem: DataGridRow[string]; column: Da
       {typeof rowItem === 'string' || typeof rowItem === 'number' ? (
         <Typography
           className={styles.columnItem[column.align || 'center']}
-          color="SurfaceVariant"
+          color="SurfaceVariantOn"
           variant="D1"
           weight="regular"
           isEllipsisOneLine

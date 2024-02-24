@@ -12,10 +12,9 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
     const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storageTheme = localStorage.getItem('theme');
-
     document.documentElement.setAttribute(
       'data-theme-mode',
-      storageTheme === 'dark' ? 'dark' : isDarkMode ? 'dark' : 'light',
+      storageTheme === 'dark' ? 'dark' : storageTheme === 'light' ? 'light' : isDarkMode ? 'dark' : 'light',
     );
   }, []);
 

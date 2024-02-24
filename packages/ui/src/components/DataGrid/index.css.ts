@@ -2,8 +2,8 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { palette } from '../../styles';
 
 const borderColor = {
-  header: palette.BackgroundOn,
-  body: palette.BackgroundOn,
+  header: palette.SurfaceOn,
+  body: palette.SurfaceVariant,
 };
 export const container = style({
   width: '100%',
@@ -13,13 +13,15 @@ export const container = style({
 export const header = style({
   display: 'flex',
   alignItems: 'stretch',
-  background: palette.Primary,
+  background: palette.Surface,
+  borderTop: `1px solid ${borderColor.header}`,
+  borderBottom: `1px solid ${borderColor.header}`,
 });
 
 export const body = style({
   display: 'flex',
   flexDirection: 'column',
-  background: palette.White,
+  background: borderColor.body,
   width: '100%',
 });
 
@@ -95,5 +97,5 @@ export const columnItem = styleVariants({
 export const row = style({
   display: 'flex',
   alignItems: 'stretch',
-  borderBottom: `1px solid ${borderColor.body}`,
+  borderBottom: `1px solid ${palette.SurfaceVariantOn}`,
 });
