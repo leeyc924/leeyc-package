@@ -9,7 +9,7 @@ globalStyle('html, body', {
       padding: 0,
       border: 0,
       boxSizing: 'border-box',
-      fontFamily: 'Pretendard Apple SD Gothic Neo Malgun Gothic sans-serif',
+      fontFamily: `"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif`,
     },
   },
 });
@@ -18,6 +18,13 @@ globalStyle('html, body, #root', {
     [reset]: {
       width: '100%',
       height: '100%',
+    },
+  },
+});
+globalStyle('body', {
+  '@layer': {
+    [reset]: {
+      lineHeight: 1,
     },
   },
 });
