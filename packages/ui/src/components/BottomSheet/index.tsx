@@ -4,6 +4,7 @@ import FocusTrap from 'focus-trap-react';
 import Icon from '@breadlee/icons';
 import { classnames } from '@breadlee/utils';
 import useModalRenderHelper from '@hooks/useModalRenderHelper';
+import { palette } from '@styles';
 import Typography from '../Typography';
 import Button from '../Button';
 import * as styles from './index.css';
@@ -91,12 +92,12 @@ const BottomSheet = ({
                 <header className={styles.header}>
                   {typeof title === 'string' ? (
                     <div className={styles.title}>
-                      <Typography color="gray900" component="h2" variant="H2" isEllipsisOneLine>
+                      <Typography color="onSurfaceVariant" component="h2" variant="H2" isEllipsisOneLine>
                         {title}
                       </Typography>
                       {subTitle && (
                         <span className={styles.subTitle}>
-                          <Typography color="gray700" variant="D1" weight="regular">
+                          <Typography color="onSurfaceVariant" variant="D1" weight="regular">
                             {subTitle}
                           </Typography>
                         </span>
@@ -112,7 +113,7 @@ const BottomSheet = ({
                 <footer className={styles.footer}>
                   <>
                     {cancelText && (
-                      <Button color="secondary" size="xlarge" isFullWidth onClick={handleCancel}>
+                      <Button color="primary" size="xlarge" variant="outline" isFullWidth onClick={handleCancel}>
                         {cancelText}
                       </Button>
                     )}
@@ -126,7 +127,7 @@ const BottomSheet = ({
               )}
               {useCloseButton && (
                 <button className={styles.close} type="button" onClick={handleClose}>
-                  <Icon irName="닫기" name="close" size={16} />
+                  <Icon color={palette.onSurfaceVariant} irName="닫기" name="close" size={16} />
                 </button>
               )}
             </section>
