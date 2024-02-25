@@ -10,15 +10,17 @@ export const input = style([
   font.variant.B3,
   {
     width: '100%',
-    border: `1px solid ${palette.SurfaceOn}`,
+    border: `1px solid ${palette.outline}`,
+    background: palette.surface,
     height: 48,
     padding: '0 13px',
     overflow: 'hidden',
     borderRadius: 8,
     lineHeight: 1,
+    color: palette.onSurface,
     ':focus': {
       outline: 'none',
-      border: `1px solid ${palette.Primary}`,
+      border: `1px solid ${palette.primary}`,
     },
   },
 ]);
@@ -29,7 +31,7 @@ export const placeholder = styleVariants({
     top: 14,
     left: 13,
     transition: 'all ease 0.2s',
-    background: palette.White,
+    background: palette.surface,
   },
   focus: {
     top: -10,
@@ -44,14 +46,14 @@ export const placeholder = styleVariants({
 });
 
 export const success = style({
-  borderColor: palette.Primary,
+  borderColor: palette.primary,
 });
 
 export const error = style({
-  borderColor: palette.Error,
+  borderColor: palette.error,
   ':focus': {
     outline: 'none',
-    border: `1px solid ${palette.Error}`,
+    border: `1px solid ${palette.error}`,
   },
 });
 

@@ -26,12 +26,12 @@ export const label = style({
     content: '',
     width: defaultSize - 4,
     height: defaultSize - 4,
-    border: `2px solid ${palette.Outline}`,
+    border: `2px solid ${palette.outline}`,
     borderRadius: 4,
   },
   selectors: {
     [`${input}:checked + &:before`]: {
-      background: palette.Primary,
+      background: palette.primary,
     },
   },
 });

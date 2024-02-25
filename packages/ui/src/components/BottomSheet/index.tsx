@@ -91,12 +91,12 @@ const BottomSheet = ({
                 <header className={styles.header}>
                   {typeof title === 'string' ? (
                     <div className={styles.title}>
-                      <Typography color="Gray900" component="h2" variant="H2" isEllipsisOneLine>
+                      <Typography color="gray900" component="h2" variant="H2" isEllipsisOneLine>
                         {title}
                       </Typography>
                       {subTitle && (
                         <span className={styles.subTitle}>
-                          <Typography color="Gray700" variant="D1" weight="regular">
+                          <Typography color="gray700" variant="D1" weight="regular">
                             {subTitle}
                           </Typography>
                         </span>

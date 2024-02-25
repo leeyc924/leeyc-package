@@ -1,13 +1,4 @@
-import {
-  KeyboardEventHandler,
-  ReactNode,
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { KeyboardEventHandler, ReactNode, createContext, useCallback, useContext, useMemo, useRef } from 'react';
 import { classnames } from '@breadlee/utils';
 import Typography, { TypographyProps } from '../Typography';
 import * as styles from './index.css';
@@ -38,7 +29,9 @@ interface ContextValue {
   selectedTabId: string;
   onClick(tabId: string): void;
 }
+
 const Context = createContext<ContextValue | null>(null);
+
 const Tabs = ({ children, onClick, selectedTabId }: TabsProps) => {
   const handleClick = (tabId: string) => {
     onClick(tabId);
@@ -47,7 +40,7 @@ const Tabs = ({ children, onClick, selectedTabId }: TabsProps) => {
   return <Context.Provider value={{ selectedTabId, onClick: handleClick }}>{children}</Context.Provider>;
 };
 
-const TabList = ({ tabItemList, variant = 'default' }: TabListProps) => {
+const TabList = ({ tabItemList }: TabListProps) => {
   const context = useContext(Context);
 
   if (!context) {
@@ -134,7 +127,7 @@ const TabList = ({ tabItemList, variant = 'default' }: TabListProps) => {
           onKeyDown={handleKeyDown}
         >
           <Typography
-            color={index === selectedTabIndex ? 'Primary' : 'Gray700'}
+            color={index === selectedTabIndex ? 'primary' : 'onSurfaceVariant'}
             variant="B2"
             {...tabItem.typographyProps}
           >

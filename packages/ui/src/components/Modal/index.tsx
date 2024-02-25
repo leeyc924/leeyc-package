@@ -4,6 +4,7 @@ import FocusTrap from 'focus-trap-react';
 import Icon from '@breadlee/icons';
 import { classnames } from '@breadlee/utils';
 import useModalRenderHelper from '@hooks/useModalRenderHelper';
+import { palette } from '@styles';
 import Typography from '../Typography';
 import Button from '../Button';
 import * as styles from './index.css';
@@ -90,12 +91,12 @@ const Modal = ({
                 <header className={styles.header}>
                   {typeof title === 'string' ? (
                     <div className={styles.title}>
-                      <Typography color="Gray900" component="h2" variant="H2" isEllipsisOneLine>
+                      <Typography color="onSurfaceVariant" component="h2" variant="H2" isEllipsisOneLine>
                         {title}
                       </Typography>
                       {subTitle && (
                         <span className={styles.subTitle}>
-                          <Typography color="Gray700" variant="D1" weight="regular">
+                          <Typography color="onSurfaceVariant" component="h3" variant="D1" weight="regular">
                             {subTitle}
                           </Typography>
                         </span>
@@ -111,7 +112,7 @@ const Modal = ({
                 <footer className={styles.footer}>
                   <>
                     {cancelText && (
-                      <Button color="secondary" size="xlarge" isFullWidth onClick={handleCancel}>
+                      <Button color="primary" size="xlarge" variant="outline" isFullWidth onClick={handleCancel}>
                         {cancelText}
                       </Button>
                     )}
@@ -125,7 +126,7 @@ const Modal = ({
               )}
               {useCloseButton && (
                 <button className={styles.close} type="button" onClick={handleClose}>
-                  <Icon irName="닫기" name="close" size={16} />
+                  <Icon color={palette.onSurfaceVariant} irName="닫기" name="close" size={16} />
                 </button>
               )}
             </section>

@@ -198,15 +198,15 @@ const Calendar = ({
       <div className={styles.header}>
         {!!onPrevClick && (
           <button type="button" onClick={handlePrevClick}>
-            <Icon color={palette.Gray900} irName="전월 보기" name="arrow_left" size={24} />
+            <Icon color={palette.onSurface} irName="전월 보기" name="arrow_left" size={24} />
           </button>
         )}
-        <Typography>
+        <Typography color="onSurface">
           {_currentViewDate.get('year')}년 {_currentViewDate.get('month') + 1}월
         </Typography>
         {!!onNextClick && (
           <button type="button" onClick={handleNextClick}>
-            <Icon color={palette.Gray900} irName="명월 보기" name="arrow_right" size={24} />
+            <Icon color={palette.onSurface} irName="명월 보기" name="arrow_right" size={24} />
           </button>
         )}
       </div>
@@ -217,7 +217,7 @@ const Calendar = ({
               <div className={styles.dayOfWeekItem} key={index}>
                 <Typography
                   aria-label={text}
-                  color={index === 0 ? 'Error' : index === 6 ? 'Primary' : 'Gray700'}
+                  color={index === 0 ? 'error' : index === 6 ? 'primary' : 'onSurface'}
                   tabIndex={-1}
                   variant="D1"
                   weight="bold"
@@ -256,29 +256,31 @@ const Calendar = ({
                       aria-label={`${dayjs(dateItem.dateInfo).format('YYYY년 MM월 DD일')} ${WEEK_TO_KR[dateItem.week]}요일`}
                       aria-selected={isSelected}
                       className={styles.dateItem['button']}
-                      {...{ [DATA_DATE_ATTRIBUTE]: dateItem.dateInfo }}
                       disabled={dateItem.disabled}
                       role="gridcell"
-                      style={{ ...((isSelectedEnd || isSelectedStart) && { background: palette.PrimaryContainer }) }}
                       type="button"
                       onKeyDown={onKeyDown}
                       onClick={() =>
                         useRange ? handleDateRangeClick(dateItem.dateInfo) : handleDateClick(dateItem.dateInfo)
                       }
+                      {...{ [DATA_DATE_ATTRIBUTE]: dateItem.dateInfo }}
+                      {...{ ...((isSelectedEnd || isSelectedStart) && { style: { background: palette.primary } }) }}
                     >
                       <Typography
                         variant="D1"
                         weight="bold"
                         color={
                           dateItem.disabled
-                            ? 'Gray300'
-                            : isSelected
-                              ? 'White'
-                              : dateItem.week === 0 || dateItem.isHoliday
-                                ? 'Error'
-                                : dateItem.week === 6
-                                  ? 'Primary'
-                                  : 'Gray900'
+                            ? 'disabled'
+                            : isSelectedEnd || isSelectedStart
+                              ? 'onPrimary'
+                              : isSelected
+                                ? 'onSecondaryContainer'
+                                : dateItem.week === 0 || dateItem.isHoliday
+                                  ? 'error'
+                                  : dateItem.week === 6
+                                    ? 'primary'
+                                    : 'onSurface'
                         }
                       >
                         {dateItem.day}

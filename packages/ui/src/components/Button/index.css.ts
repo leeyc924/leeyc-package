@@ -8,6 +8,12 @@ export const base = style({
   justifyContent: 'center',
   padding: '0 24px',
   borderRadius: 8,
+  ':disabled': {
+    background: palette.disabled,
+    border: `1px solid ${palette.disabled}`,
+    color: palette.disabled,
+    pointerEvents: 'none',
+  },
 });
 
 export const fullWidth = style({
@@ -31,65 +37,52 @@ export const size = styleVariants({
   },
 });
 
-export const color = styleVariants({
+export const contained = styleVariants({
   primary: {
-    backgroundColor: palette.Primary,
-    border: `1px solid ${palette.Primary}`,
-    color: palette.PrimaryOn,
+    backgroundColor: palette.primary,
+    border: `1px solid ${palette.primary}`,
+    color: palette.onPrimary,
 
     ':active': {
-      backgroundColor: palette.PrimaryContainer,
-      border: `1px solid ${palette.PrimaryContainer}`,
-      color: palette.PrimaryContainerOn,
-    },
-    ':disabled': {
-      backgroundColor: palette.Gray500,
-      border: `1px solid ${palette.Gray500}`,
-    },
-  },
-  secondary: {
-    backgroundColor: palette.Secondary,
-    border: `1px solid ${palette.Secondary}`,
-    color: palette.SecondaryOn,
-
-    ':active': {
-      backgroundColor: palette.SecondaryContainer,
-      border: `1px solid ${palette.SecondaryContainer}`,
-      color: palette.SecondaryContainerOn,
-    },
-    ':disabled': {
-      backgroundColor: palette.Gray500,
-      border: `1px solid ${palette.Gray500}`,
-    },
-  },
-  tertiary: {
-    backgroundColor: palette.Tertiary,
-    border: `1px solid ${palette.Tertiary}`,
-    color: palette.TertiaryOn,
-
-    ':active': {
-      backgroundColor: palette.TertiaryContainer,
-      border: `1px solid ${palette.TertiaryContainer}`,
-      color: palette.TertiaryContainerOn,
-    },
-    ':disabled': {
-      backgroundColor: palette.Gray500,
-      border: `1px solid ${palette.Gray500}`,
+      backgroundColor: palette.primaryContainer,
+      border: `1px solid ${palette.primaryContainer}`,
+      color: palette.onPrimaryContainer,
     },
   },
   error: {
-    backgroundColor: palette.Error,
-    border: `1px solid ${palette.Error}`,
-    color: palette.ErrorOn,
+    backgroundColor: palette.error,
+    border: `1px solid ${palette.error}`,
+    color: palette.onError,
 
     ':active': {
-      backgroundColor: palette.ErrorContainer,
-      border: `1px solid ${palette.ErrorContainer}`,
-      color: palette.ErrorContainerOn,
+      backgroundColor: palette.errorContainer,
+      border: `1px solid ${palette.errorContainer}`,
+      color: palette.onErrorContainer,
     },
-    ':disabled': {
-      backgroundColor: palette.Gray500,
-      border: `1px solid ${palette.Gray500}`,
+  },
+});
+
+export const outline = styleVariants({
+  primary: {
+    backgroundColor: palette.surface,
+    border: `1px solid ${palette.outline}`,
+    color: palette.primary,
+
+    ':active': {
+      backgroundColor: palette.onPrimary,
+      border: `1px solid ${palette.outline}`,
+      color: palette.primary,
+    },
+  },
+  error: {
+    backgroundColor: palette.surface,
+    border: `1px solid ${palette.outline}`,
+    color: palette.error,
+
+    ':active': {
+      backgroundColor: palette.onError,
+      border: `1px solid ${palette.outline}`,
+      color: palette.error,
     },
   },
 });

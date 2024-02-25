@@ -21,7 +21,7 @@ export const dimmed = style({
   left: 0,
   width: '100%',
   height: '100%',
-  background: 'rgba(0,0,0,0.6)',
+  background: palette.surfaceDim,
   overflow: 'hidden',
   overscrollBehavior: 'none',
   touchAction: 'none',
@@ -31,7 +31,7 @@ export const section = styleVariants({
   base: {
     position: 'relative',
     width: '100%',
-    background: palette.White,
+    background: palette.surfaceContainer,
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',

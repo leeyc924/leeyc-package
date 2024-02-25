@@ -29,7 +29,7 @@ export const section = styleVariants({
     width: '100%',
     bottom: 0,
     left: 0,
-    background: palette.White,
+    background: palette.white,
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',

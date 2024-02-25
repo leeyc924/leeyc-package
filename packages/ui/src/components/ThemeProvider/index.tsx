@@ -2,9 +2,10 @@ import { ReactNode, useEffect } from 'react';
 
 export interface ThemeProviderProps {
   children: ReactNode;
+  theme?: 'dark' | 'light';
 }
 
-const ThemeProvider = ({ children }: ThemeProviderProps) => {
+const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
   useEffect(() => {
     if (typeof window === 'undefined') {
       return;
@@ -14,9 +15,17 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const storageTheme = localStorage.getItem('theme');
     document.documentElement.setAttribute(
       'data-theme-mode',
-      storageTheme === 'dark' ? 'dark' : storageTheme === 'light' ? 'light' : isDarkMode ? 'dark' : 'light',
+      theme
+        ? theme
+        : storageTheme === 'dark'
+          ? 'dark'
+          : storageTheme === 'light'
+            ? 'light'
+            : isDarkMode
+              ? 'dark'
+              : 'light',
     );
-  }, []);
+  }, [theme]);
 
   return children;
 };

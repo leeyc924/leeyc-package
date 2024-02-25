@@ -5,7 +5,8 @@ import * as styles from './index.css';
 
 interface ButtonOwnProps {
   children: ReactNode;
-  color?: 'primary' | 'secondary' | 'tertiary' | 'error';
+  color?: 'primary' | 'error';
+  variant?: 'contained' | 'outline';
   size?: 'xlarge' | 'large' | 'medium' | 'small';
   isFullWidth?: boolean;
   typographyProps?: Omit<TypographyProps, 'children'>;
@@ -21,6 +22,7 @@ const Button = <E extends ElementType = 'button'>({
   isFullWidth,
   size = 'medium',
   typographyProps,
+  variant = 'contained',
   ...otherProps
 }: ButtonProps<E>) => {
   const Component = component || 'button';
@@ -58,8 +60,10 @@ const Button = <E extends ElementType = 'button'>({
     <Component
       {...(Component === 'button' && { type: 'button' })}
       {...otherProps}
-      className={classnames(styles.base, styles.color[color], styles.size[size], {
+      className={classnames(styles.base, styles.size[size], {
         [styles.fullWidth]: !!isFullWidth,
+        [styles.contained[color]]: variant === 'contained',
+        [styles.outline[color]]: variant === 'outline',
       })}
     >
       {typeof children === 'string' ? (

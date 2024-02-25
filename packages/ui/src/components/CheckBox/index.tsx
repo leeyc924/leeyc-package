@@ -19,7 +19,7 @@ const CheckBox = forwardRef(
         <label className={styles.label} htmlFor={uniqueId}>
           <span className={styles.typo}>
             {typeof label === 'string' ? (
-              <Typography color="Gray900" variant="B2" {...typographyProps}>
+              <Typography color="onSurface" variant="B2" {...typographyProps}>
                 {label}
               </Typography>
             ) : (
@@ -28,7 +28,7 @@ const CheckBox = forwardRef(
           </span>
         </label>
         <span className={styles.icon}>
-          <Icon color={palette.PrimaryOn} name="check" size={20} aria-hidden />
+          <Icon color={palette.onPrimary} name="check" size={20} aria-hidden />
         </span>
       </div>
     );

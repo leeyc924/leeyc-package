@@ -9,9 +9,11 @@ export const container = style({
 export const tabItem = styleVariants({
   base: {
     flex: 1,
-    borderBottom: `1px solid ${palette.SurfaceOn}`,
+    padding: 12,
+    height: 48,
+    boxShadow: `0 -1px 0 0 ${palette.onSurface} inset`,
   },
   select: {
-    borderBottom: `1px solid ${palette.Primary}`,
+    boxShadow: `0 -2px 0 0 ${palette.primary} inset`,
   },
 });
