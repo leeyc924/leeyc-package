@@ -8,7 +8,7 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <ThemeProvider>
+        <ThemeProvider theme='light'>
           <Story />
         </ThemeProvider>
       );
