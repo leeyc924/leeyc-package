@@ -87,7 +87,7 @@ createGlobalTheme("html[data-theme-mode='dark']", theme, {
   shadow: '#000000',
   surfaceDim: '#0F1416',
   surfaceContainer: '#1B2122',
-  disabled: 'rgba(222, 227, 229, 1)',
+  disabled: 'rgba(222, 227, 229, 0.12)',
 });
 
 const root = createGlobalTheme(':root', {
