@@ -6,6 +6,8 @@ export { default as TextField } from './TextField';
 export type { TextFieldProps } from './TextField';
 export { default as CheckBox } from './CheckBox';
 export type { CheckBoxProps } from './CheckBox';
+export { default as Radio } from './Radio';
+export type { RadioProps } from './Radio';
 export { default as Calendar } from './Calendar';
 export type { CalendarProps } from './Calendar';
 export { default as BottomSheet } from './BottomSheet';

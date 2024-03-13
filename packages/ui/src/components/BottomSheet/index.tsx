@@ -113,12 +113,12 @@ const BottomSheet = ({
                 <footer className={styles.footer}>
                   <>
                     {cancelText && (
-                      <Button color="primary" size="xlarge" variant="outline" isFullWidth onClick={handleCancel}>
+                      <Button color="primary" size="large" variant="outline" isFullWidth onClick={handleCancel}>
                         {cancelText}
                       </Button>
                     )}
                     {submitText && (
-                      <Button color="primary" size="xlarge" isFullWidth onClick={handleSubmit}>
+                      <Button color="primary" size="large" isFullWidth onClick={handleSubmit}>
                         {submitText}
                       </Button>
                     )}
@@ -127,7 +127,7 @@ const BottomSheet = ({
               )}
               {useCloseButton && (
                 <button className={styles.close} type="button" onClick={handleClose}>
-                  <Icon color={palette.onSurfaceVariant} irName="닫기" name="close" size={16} />
+                  <Icon color={palette.onSurfaceVariant} irName="닫기" name="close" />
                 </button>
               )}
             </section>

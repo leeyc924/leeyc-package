@@ -34,12 +34,12 @@ export const placeholder = styleVariants({
     background: palette.surface,
   },
   focus: {
-    top: -10,
+    top: -8,
     left: 13,
     zIndex: 1,
   },
   value: {
-    top: -10,
+    top: -8,
     left: 13,
     zIndex: 1,
   },

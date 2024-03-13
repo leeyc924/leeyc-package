@@ -60,8 +60,8 @@ const Calendar = ({
 
   const handleDateClick = (dateInfo: string) => {
     const dateInfoDayjs = dayjs(dateInfo);
-    const isSmae = selectedDateList.some(selected => selected.isSame(dateInfoDayjs, 'day'));
-    onDateClick({ dateList: isSmae ? [] : [dateInfoDayjs], selectedDate: dateInfoDayjs });
+    const isSame = selectedDateList.some(selected => selected.isSame(dateInfoDayjs, 'day'));
+    onDateClick({ dateList: isSame ? [] : [dateInfoDayjs], selectedDate: dateInfoDayjs });
   };
 
   const getBetweenDate = useCallback((startDate: Dayjs, endDate: Dayjs) => {
@@ -91,6 +91,13 @@ const Calendar = ({
 
       // 선택된 날짜가 하나인 경우 선택된 날짜와 클릭한 날짜 사이의 날짜 사이 값들 반환
       if (sortSelectedDateList.length === 1) {
+        if (sortSelectedDateList[0].isSame(dateInfoDayjs, 'date')) {
+          onDateClick({
+            dateList: [],
+            selectedDate: dateInfoDayjs,
+          });
+          return;
+        }
         const returnSelectedDateList = getBetweenDate(sortSelectedDateList[0], dateInfoDayjs);
         onDateClick({
           dateList: returnSelectedDateList,

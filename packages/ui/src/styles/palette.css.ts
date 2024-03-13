@@ -55,7 +55,7 @@ createGlobalTheme("html[data-theme-mode='light']", theme, {
   outline: '#70797B',
   outlineVariant: '#BFC8CB',
   shadow: '#000000',
-  surfaceDim: '#D5DBDD',
+  surfaceDim: 'rgba(0, 0, 0, 0.6)',
   surfaceContainer: '#E9EFF1',
   disabled: 'rgba(23, 28, 30, 0.12)',
 });
@@ -85,7 +85,7 @@ createGlobalTheme("html[data-theme-mode='dark']", theme, {
   outline: '#899295',
   outlineVariant: '#3F484B',
   shadow: '#000000',
-  surfaceDim: '#0F1416',
+  surfaceDim: 'rgba(255, 255, 255, 0.6)',
   surfaceContainer: '#1B2122',
   disabled: 'rgba(222, 227, 229, 0.12)',
 });

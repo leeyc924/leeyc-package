@@ -62,7 +62,7 @@ export const subTitle = style({
 export const main = style({
   flex: 1,
   overflow: 'hidden auto',
-  padding: '0 20px',
+  padding: '10px 20px',
 });
 
 export const footer = style({

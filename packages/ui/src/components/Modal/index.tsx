@@ -17,10 +17,10 @@ export interface ModalProps {
   useDimmedClose?: boolean;
   title?: ReactNode;
   subTitle?: ReactNode;
-  submitText: string;
+  submitText?: string;
   checkValidBeforeSubmit?(): boolean;
   onSubmit?(): void;
-  cancelText: string;
+  cancelText?: string;
   checkValidBeforeCancel?(): boolean;
   onCancel?(): void;
   useCloseButton?: boolean;

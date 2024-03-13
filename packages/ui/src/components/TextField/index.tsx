@@ -4,6 +4,7 @@ import {
   ForwardedRef,
   forwardRef,
   useCallback,
+  useEffect,
   useId,
   useState,
 } from 'react';
@@ -42,6 +43,12 @@ const TextField = forwardRef(
       [onBlur],
     );
 
+    useEffect(() => {
+      const input = document.getElementById(uniqueId);
+      if ((input as HTMLInputElement).value) {
+        setIsValue(true);
+      }
+    }, [uniqueId]);
     return (
       <div className={styles.container}>
         {placeholder && (
