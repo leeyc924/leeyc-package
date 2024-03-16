@@ -22,6 +22,7 @@ const icons = [
   'minus',
   'plus',
   'redo',
+  'setting',
   'system_down',
   'system_up',
 ] as const;
