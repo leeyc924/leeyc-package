@@ -12,6 +12,7 @@
     "dist/**"
   ],
   "scripts": {
+    "lint": "npx eslint --fix",
     "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
     "build": "rollup --config",
     "postbuild": "node scripts/postbuild.js && pnpm run minify",

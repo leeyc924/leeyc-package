@@ -1,5 +1,3 @@
-import { ComponentProps, ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType } from 'react';
-
 /** `T`의 모든 속성을 순회하며 optional로 수정 */
 export type DeepPartial<T> = {
   [P in keyof T]?: DeepPartial<T[P]>;
