@@ -16,7 +16,7 @@
     "@breadlee/tsconfig": "workspace:*",
     "@changesets/cli": "^2.27.1",
     "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.4",
     "turbo": "^2.2.3",
     "typescript": "^5.3.3"
   },
