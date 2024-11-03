@@ -4,7 +4,7 @@ import { compat, defineConfig } from '../utils.js';
 export const react = defineConfig(
   ...fixupConfigRules(compat.extends('plugin:react/recommended')),
   ...fixupConfigRules(compat.extends('plugin:react-hooks/recommended')),
-  // ...fixupConfigRules(compat.extends('plugin:jsx-a11y/strict')),
+  ...fixupConfigRules(compat.extends('plugin:jsx-a11y/strict')),
   ...fixupConfigRules(compat.extends('plugin:import/recommended')),
   ...fixupConfigRules(compat.extends('plugin:import/typescript')),
   {
@@ -19,7 +19,6 @@ export const react = defineConfig(
       'react/no-unescaped-entities': 'off',
       'react/display-name': 'off',
       'react/jsx-curly-brace-presence': 'error',
-      // 'jsx-a11y/label-has-associated-control': 'warn',
       'react-hooks/exhaustive-deps': [
         'warn',
         {
