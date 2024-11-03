@@ -5,5 +5,12 @@
   "description": "leeyc package tsconifg",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "type": "module",
+  "files": [
+    "./base.json",
+    "./next.json",
+    "./react.json",
+    "./dom.json"
+  ]
 }
