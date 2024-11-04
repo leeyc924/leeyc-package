@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@breadlee/eslint-config": "workspace:*",
+    "@breadlee/eslint": "workspace:*",
+    "@breadlee/prettier": "workspace:*",
     "@breadlee/tsconfig": "workspace:*",
     "@changesets/cli": "^2.27.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",

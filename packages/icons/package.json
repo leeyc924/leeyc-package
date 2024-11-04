@@ -21,16 +21,16 @@
     "minify": "cleancss -o ./dist/icons.css ./dist/icons.css"
   },
   "devDependencies": {
-    "@breadlee/eslint-config": "workspace:*",
+    "@breadlee/eslint": "workspace:*",
     "@breadlee/tsconfig": "workspace:*",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "clean-css-cli": "^5.6.3",
-    "eslint": "^8.56.0",
+    "eslint": "^9.14.0",
     "fantasticon": "^2.0.0",
     "oslllo-svg-fixer": "^3.0.0",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.6.3"
   }
 }

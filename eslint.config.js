@@ -1,4 +1,4 @@
-import { configs, defineConfig } from '@breadlee/eslint-config'
+import { configs, defineConfig } from '@breadlee/eslint'
 
 export default defineConfig(
   {

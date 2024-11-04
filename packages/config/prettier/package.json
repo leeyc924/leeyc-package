@@ -1,0 +1,21 @@
+{
+  "name": "@breadlee/prettier",
+  "version": "0.0.1",
+  "description": "leeyc package prettier config",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "leeyc",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "default": "./src/index.js"
+    }
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "prettier-plugin-packagejson": "^2.5.3"
+  }
+}

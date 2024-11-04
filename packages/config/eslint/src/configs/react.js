@@ -5,8 +5,6 @@ export const react = defineConfig(
   ...fixupConfigRules(compat.extends('plugin:react/recommended')),
   ...fixupConfigRules(compat.extends('plugin:react-hooks/recommended')),
   ...fixupConfigRules(compat.extends('plugin:jsx-a11y/strict')),
-  ...fixupConfigRules(compat.extends('plugin:import/recommended')),
-  ...fixupConfigRules(compat.extends('plugin:import/typescript')),
   {
     settings: {
       react: {
