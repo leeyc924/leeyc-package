@@ -1,5 +1,9 @@
 .prettierignore
 .gitignore
 *.env
-pnpm-lock.yml
-**.yaml
+**/build
+**/temp
+**/*.svg
+**/*.yml
+**/*.yaml
+**/dist
