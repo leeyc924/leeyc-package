@@ -1,52 +1,41 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Strictest",
   "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "esnext"
+    ],
     "strict": true,
     "strictNullChecks": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
     "isolatedModules": true,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "es2023"
-    ],
-    "module": "esnext",
-    "target": "es2022",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
     "resolveJsonModule": true,
     "noEmit": true,
-    "incremental": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "pretty": true,
+    "moduleResolution": "node",
+    "module": "esnext",
     "preserveWatchOutput": true,
-    "tsBuildInfoFile": "${configDir}/tsconfig.tsbuildinfo",
+    "declarationMap": true,
+    "inlineSources": false,
+    "declaration": true,
+    "composite": false,
+    "pretty": true,
     "baseUrl": "${configDir}",
     "paths": {
-      "@/*": [
+      "@app/*": [
         "${configDir}/src/*"
       ]
     }
   },
   "include": [
-    "${configDir}/.commitlintrc.ts",
     "${configDir}/.storybook/**/*",
-    "${configDir}/**/*.astro",
     "${configDir}/**/*.ts",
     "${configDir}/**/*.tsx",
     "${configDir}/**/*.cts",
@@ -64,7 +53,5 @@
     "${configDir}/node_modules",
     "${configDir}/dist",
     "${configDir}/storybook-static",
-    "${configDir}/playwright-report",
-    "${configDir}/test-results"
   ]
 }

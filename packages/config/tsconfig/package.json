@@ -1,6 +1,7 @@
 {
   "name": "@breadlee/tsconfig",
   "version": "0.0.2",
+  "private": true,
   "license": "MIT",
   "description": "leeyc package tsconifg",
   "publishConfig": {
@@ -11,6 +12,7 @@
     "./base.json",
     "./next.json",
     "./react.json",
-    "./dom.json"
+    "./dom.json",
+    "./build.json"
   ]
 }

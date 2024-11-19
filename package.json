@@ -5,13 +5,14 @@
   "scripts": {
     "clear-install": "bash scripts/clear-install/index.sh",
     "generate-component": "bash scripts/generate-component/index.sh",
+    "prettier": "prettier --write .",
     "typecheck": "turbo run typecheck",
     "build": "turbo run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/prettier": "workspace:*",
     "@breadlee/tsconfig": "workspace:*",
