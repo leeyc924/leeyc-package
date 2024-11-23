@@ -1,45 +1,58 @@
 {
   "name": "@breadlee/eslint",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "leeyc package eslint config",
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [],
   "author": "leeyc",
-  "license": "ISC",
   "exports": {
     ".": {
-      "default": "./src/index.js",
-      "types": "./src/index.d.ts"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "source": "./src/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "typecheck": "tsc"
+    "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
+    "build": "node build.js",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@eslint/compat": "^1.2.2",
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.13.0",
+    "@eslint/js": "^9.15.0",
+    "@next/eslint-plugin-next": "^15.0.2",
     "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/utils": "^8.13.0",
+    "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^2.2.3",
-    "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "eslint-plugin-storybook": "^0.11.0",
     "globals": "^15.11.0",
-    "typescript-eslint": "^8.12.2"
+    "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
-    "@breadlee/tsconfig": "workspace:*",
-    "@next/eslint-plugin-next": "^15.0.2",
+    "@fe-config/typescript": "workspace:*",
+    "@types/eslint": "^9.6.1",
     "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__eslintrc": "^2.1.2",
     "@types/node": "^22.8.7",
-    "@typescript-eslint/utils": "^8.12.2"
+    "esbuild": "^0.24.0"
   }
 }

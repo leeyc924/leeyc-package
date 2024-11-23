@@ -1,7 +1,7 @@
-import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
-import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
+import tseslint from 'typescript-eslint';
 
 export const defineConfig = tseslint.config;
 

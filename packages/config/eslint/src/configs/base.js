@@ -1,5 +1,7 @@
 import js from '@eslint/js';
 import prettierConfig from 'eslint-config-prettier';
+//@ts-ignore
+import sortDestructureKeysPlugin from 'eslint-plugin-sort-destructure-keys';
 import turboPlugin from 'eslint-plugin-turbo';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -15,6 +17,7 @@ export const base = defineConfig(
   {
     plugins: {
       turbo: turboPlugin,
+      'sort-destructure-keys': sortDestructureKeysPlugin,
     },
   },
   {
@@ -24,23 +27,12 @@ export const base = defineConfig(
     },
   },
   {
-    linterOptions: {
-      reportUnusedDisableDirectives: true,
-    },
+    files: ['**/*.{mjs,js,ts,tsx}'],
     languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
+      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
-      },
-    },
-    settings: {
-      'import/resolver': {
-        typescript: {
-          project: './tsconfig.json',
-        },
       },
     },
     rules: {
@@ -52,8 +44,10 @@ export const base = defineConfig(
       'no-case-declarations': 'off',
       'no-restricted-globals': 'off',
       'no-unused-expressions': 'off',
+      'sort-destructure-keys/sort-destructure-keys': [2, { caseSensitive: false }],
+      '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unnecessary-condition': 'off',
       '@typescript-eslint/no-var-requires': 'off',
