@@ -3,10 +3,6 @@
   "display": "Base DOM",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ]
+    "lib": ["dom", "dom.iterable", "esnext"]
   }
 }

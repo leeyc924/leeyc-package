@@ -12,7 +12,7 @@
     "dist/**"
   ],
   "scripts": {
-    "lint": "npx eslint --fix",
+    "lint": "eslint . --fix",
     "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
     "build": "rollup --config",
     "postbuild": "node scripts/postbuild.js && pnpm run minify",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/icons": "workspace:*",
-    "@breadlee/tsconfig": "workspace:*",
+    "@breadlee/typescript": "workspace:*",
     "@breadlee/utils": "workspace:^",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",

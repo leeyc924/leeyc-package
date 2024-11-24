@@ -1,5 +1,5 @@
 {
-  "extends": "@breadlee/tsconfig/base.json",
+  "extends": "@breadlee/typescript/dom.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
 }

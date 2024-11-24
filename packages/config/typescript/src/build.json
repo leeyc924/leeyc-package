@@ -5,7 +5,7 @@
     "tsBuildInfoFile": "${configDir}/tsconfig.build.tsbuildinfo",
     "outDir": "${configDir}/dist",
     "rootDir": "${configDir}/src",
-    "noEmit": false,
+    "noEmit": false
   },
   "include": [
     "${configDir}/src/**/*.ts",

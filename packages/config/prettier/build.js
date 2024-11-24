@@ -12,7 +12,6 @@ const esbuildConfig = {
   sourcemap: true,
   format: 'cjs',
   target: 'es2022',
-  platform: 'node',
   outdir: dist,
 };
 

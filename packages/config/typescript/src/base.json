@@ -2,9 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES6",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "strict": true,
     "strictNullChecks": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,19 +17,20 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "esnext",
+    "moduleDetection": "force",
     "preserveWatchOutput": true,
     "declarationMap": true,
     "inlineSources": false,
     "declaration": true,
     "composite": false,
     "pretty": true,
+    "incremental": true,
+    "tsBuildInfoFile": "${configDir}/tsconfig.tsbuildinfo",
     "baseUrl": "${configDir}",
     "paths": {
-      "@app/*": [
-        "${configDir}/src/*"
-      ]
+      "@app/*": ["${configDir}/src/*"]
     }
   },
   "include": [
@@ -49,9 +48,5 @@
     "${configDir}/**/*.mjs",
     "${configDir}/**/*.mjsx"
   ],
-  "exclude": [
-    "${configDir}/node_modules",
-    "${configDir}/dist",
-    "${configDir}/storybook-static",
-  ]
+  "exclude": ["${configDir}/node_modules", "${configDir}/dist", "${configDir}/storybook-static"]
 }

@@ -1,10 +1,7 @@
 {
   "name": "@breadlee/eslint",
-  "version": "0.0.4",
-  "description": "leeyc package eslint config",
+  "version": "0.0.1",
   "type": "module",
-  "keywords": [],
-  "author": "leeyc",
   "exports": {
     ".": {
       "import": {
@@ -48,7 +45,7 @@
     "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
-    "@fe-config/typescript": "workspace:*",
+    "@breadlee/typescript": "workspace:*",
     "@types/eslint": "^9.6.1",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__eslintrc": "^2.1.2",

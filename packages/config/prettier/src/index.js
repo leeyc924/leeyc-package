@@ -3,8 +3,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
-  parser: 'typescript',
-  plugins: ['prettier-plugin-packagejson', '@trivago/prettier-plugin-sort-imports'],
+  plugins: ['prettier-plugin-packagejson', '@ianvs/prettier-plugin-sort-imports'],
   singleQuote: true,
   jsxSingleQuote: true,
   printWidth: 120,
@@ -22,11 +21,14 @@ const config = {
     '<BUILTIN_MODULES>',
     '^react.*$', // React 관련 import
     '<THIRD_PARTY_MODULES>', // 외부 모듈 import
+    '^@fe-core/(.*)$', // core 모듈 import
+    '^@fe-foundation/(.*)$', // foundation 모듈 import
     '^@app/(.*)$', // 내부 절대경로 import
     '^[.]', // 상대 경로 import
   ],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
+  importOrderCaseSensitive: false,
+  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
 };
 
+// export default config;
 export default config;

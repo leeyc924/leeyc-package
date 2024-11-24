@@ -1,0 +1,20 @@
+{
+  "name": "@breadlee/typescript",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./*": "./dist/*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "typescript": "^5.6.3"
+  }
+}
