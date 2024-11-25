@@ -3,7 +3,7 @@ import './index.css'; // 스타일을 위한 CSS 파일
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDates, setSelectedDates] = useState([]);
+  const [selectedDates, setSelectedDates] = useState<Date[]>([]);
 
   const handlePrevMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
@@ -13,11 +13,11 @@ const Calendar = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
   };
 
-  const handleDateClick = date => {
+  const handleDateClick = (date: Date) => {
     if (selectedDates.length === 2) {
       setSelectedDates([date]);
     } else {
-      setSelectedDates([...selectedDates, date].sort((a, b) => a - b));
+      setSelectedDates([...selectedDates, date].sort((a, b) => a.getTime() - b.getTime()));
     }
   };
 
