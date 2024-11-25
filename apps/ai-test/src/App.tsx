@@ -1,7 +1,7 @@
-import VanillaExtract from './VanillaExtract';
+import CalendarImage from './CalendarCopilot';
 
 function App() {
-  return <VanillaExtract />;
+  return <CalendarImage />;
 }
 
 export default App;
