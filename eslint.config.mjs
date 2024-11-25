@@ -1,8 +1,8 @@
-import { configs, defineConfig } from '@breadlee/eslint'
+import { configs, defineConfig } from '@breadlee/eslint';
 
 export default defineConfig(
   {
     ignores: ['apps', 'packages'],
   },
-  ...configs.base
-)
+  ...configs.base,
+);

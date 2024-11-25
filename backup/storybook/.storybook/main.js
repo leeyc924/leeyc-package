@@ -1,17 +1,14 @@
-import { mergeConfig } from "vite";
 import { resolve } from 'path';
-const UI_PATH = resolve("../../packages/ui");
+import { mergeConfig } from 'vite';
+
+const UI_PATH = resolve('../../packages/ui');
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ["../stories/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-  ],
+  stories: ['../stories/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
   docs: {
@@ -24,28 +21,28 @@ const config = {
         alias: [
           {
             find: '@styles',
-            replacement: `${UI_PATH}/src/styles`
+            replacement: `${UI_PATH}/src/styles`,
           },
           {
-            find: "@components",
+            find: '@components',
             replacement: `${UI_PATH}/src/components`,
           },
           {
-            find: "@types",
+            find: '@types',
             replacement: `${UI_PATH}/src/types`,
           },
           {
-            find: "@hooks",
+            find: '@hooks',
             replacement: `${UI_PATH}/src/hooks`,
           },
           {
-            find: "@icons",
-            replacement: resolve("../../packages/icons/dist"),
+            find: '@icons',
+            replacement: resolve('../../packages/icons/dist'),
           },
         ],
       },
       define: {
-        "process.env": {},
+        'process.env': {},
       },
       css: {
         postcss: null,

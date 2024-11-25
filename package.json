@@ -2,25 +2,26 @@
   "name": "leeyc-package",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "clear-install": "bash scripts/clear-install.sh",
-    "generate-component": "bash scripts/generate-component/index.sh",
-    "prettier": "prettier --write .",
-    "typecheck": "turbo run typecheck",
-    "build": "turbo run build"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "scripts": {
+    "build": "turbo run build",
+    "changeset": "changeset",
+    "changeset:publish": "changeset publish",
+    "changeset:version": "changeset version",
+    "clear-cache": "bash scripts/clear-cache.sh",
+    "clear-install": "bash scripts/clear-install.sh",
+    "lint": "turbo run lint",
+    "prettier": "prettier --write --cache .",
+    "typecheck": "turbo run typecheck"
+  },
   "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/prettier": "workspace:*",
     "@breadlee/typescript": "workspace:*",
     "@changesets/cli": "^2.27.1",
-    "eslint": "^9.14.0",
-    "prettier": "^3.3.3",
-    "turbo": "^2.3.1",
-    "typescript": "^5.6.3"
+    "turbo": "^2.3.1"
   },
   "packageManager": "pnpm@9.13.2"
 }

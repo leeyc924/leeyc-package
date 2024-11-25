@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ForwardedRef, ReactNode, forwardRef, memo, useId } from 'react';
+import { ComponentPropsWithoutRef, ForwardedRef, forwardRef, memo, ReactNode, useId } from 'react';
 import Typography, { TypographyProps } from '../Typography';
 import * as styles from './index.css';
 
@@ -13,11 +13,11 @@ const Radio = forwardRef(
 
     return (
       <div className={styles.container}>
-        <input {...otherProps} className={styles.input} id={uniqueId} ref={ref} type="radio" />
+        <input {...otherProps} className={styles.input} id={uniqueId} ref={ref} type='radio' />
         <label className={styles.label} htmlFor={uniqueId}>
           <span className={styles.typo}>
             {typeof label === 'string' ? (
-              <Typography color="onSurface" variant="B2" {...typographyProps}>
+              <Typography color='onSurface' variant='B2' {...typographyProps}>
                 {label}
               </Typography>
             ) : (

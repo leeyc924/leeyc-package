@@ -1,10 +1,10 @@
-import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
-import rollupResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import rollupResolve from '@rollup/plugin-node-resolve';
+import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import preserveDirective from 'rollup-plugin-preserve-directives';
-import dts from 'rollup-plugin-dts';
+import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json' assert { type: 'json' };
 
 const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})];
@@ -12,6 +12,7 @@ const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.pee
 /**
  * @type {import('rollup').RollupOptions}
  */
+// @ts-ignore
 const config = [
   {
     input: 'src/index.ts',
@@ -31,9 +32,11 @@ const config = [
         dir: 'dist',
         format: 'esm',
         exports: 'named',
+        // @ts-ignore
         banner: arg => (/components\/[^/]+\/index.js/.test(arg.fileName) ? `'use client'` : ''),
         preserveModules: true,
         preserveModulesRoot: 'src',
+        // @ts-ignore
         assetFileNames(assetInfo) {
           const assetPath = assetInfo.name.replace(/^src\//, 'css/');
           return assetPath;

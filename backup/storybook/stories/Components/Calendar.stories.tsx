@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { Calendar, CalendarProps } from '@components';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import dayjs, { Dayjs } from 'dayjs';
-import { useState } from 'react';
 
 const story: Meta<CalendarProps> = {
   component: Calendar,

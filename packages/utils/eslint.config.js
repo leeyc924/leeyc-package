@@ -1,3 +1,3 @@
-import { configs, defineConfig } from '@breadlee/eslint'
+import { configs, defineConfig } from '@breadlee/eslint';
 
-export default defineConfig(...configs.base)
+export default defineConfig(...configs.base);

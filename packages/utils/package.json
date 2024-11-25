@@ -1,15 +1,15 @@
 {
   "name": "@breadlee/utils",
   "version": "0.0.6",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
-  "type": "module",
-  "sideEffects": false,
-  "license": "MIT",
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc -b tsconfig.json"

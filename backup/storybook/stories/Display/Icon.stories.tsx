@@ -1,6 +1,6 @@
 import Icon, { IconProps } from '@icons';
-import { Meta, StoryObj } from '@storybook/react';
 import icons from '@icons/constants';
+import { Meta, StoryObj } from '@storybook/react';
 
 const story: Meta<IconProps> = {
   component: Icon,

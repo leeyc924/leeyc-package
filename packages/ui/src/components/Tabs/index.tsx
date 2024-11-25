@@ -1,4 +1,4 @@
-import { KeyboardEventHandler, ReactNode, createContext, useCallback, useContext, useMemo, useRef } from 'react';
+import { createContext, KeyboardEventHandler, ReactNode, useCallback, useContext, useMemo, useRef } from 'react';
 import { classnames } from '@breadlee/utils';
 import Typography, { TypographyProps } from '../Typography';
 import * as styles from './index.css';
@@ -112,7 +112,7 @@ const TabList = ({ tabItemList }: TabListProps) => {
       aria-labelledby={tabItemList?.[selectedTabIndex]?.label ?? ''}
       className={styles.container}
       ref={tabsRef}
-      role="tablist"
+      role='tablist'
     >
       {tabItemList.map((tabItem, index) => (
         <button
@@ -120,15 +120,15 @@ const TabList = ({ tabItemList }: TabListProps) => {
           aria-selected={index === selectedTabIndex}
           className={classnames(styles.tabItem.base, { [styles.tabItem.select]: index === selectedTabIndex })}
           key={tabItem.tabId}
-          role="tab"
+          role='tab'
           tabIndex={index === selectedTabIndex ? 0 : -1}
-          type="button"
+          type='button'
           onClick={() => handleClick(tabItem.tabId)}
           onKeyDown={handleKeyDown}
         >
           <Typography
             color={index === selectedTabIndex ? 'primary' : 'onSurfaceVariant'}
-            variant="B2"
+            variant='B2'
             {...tabItem.typographyProps}
           >
             {tabItem.label}
@@ -147,7 +147,7 @@ const TabPanel = ({ children, className, label, tabId }: TabPanelProps) => {
   }
 
   return context.selectedTabId === tabId ? (
-    <div aria-labelledby={label} className={className} id={`panel-${tabId}`} role="tabpanel" tabIndex={0}>
+    <div aria-labelledby={label} className={className} id={`panel-${tabId}`} role='tabpanel' tabIndex={0}>
       {children}
     </div>
   ) : null;

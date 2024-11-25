@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { Tabs, TabsProps } from '@components';
 import { Meta, StoryFn } from '@storybook/react';
-import { useState } from 'react';
 
 const story: Meta<TabsProps> = {
   component: Tabs,
@@ -22,13 +22,13 @@ export const Default: StoryFn<TabsProps> = () => {
             { tabId: '3', label: '3' },
           ]}
         />
-        <Tabs.TabPanel label="1번탭" tabId="1">
+        <Tabs.TabPanel label='1번탭' tabId='1'>
           1번탭
         </Tabs.TabPanel>
-        <Tabs.TabPanel label="2번탭" tabId="2">
+        <Tabs.TabPanel label='2번탭' tabId='2'>
           2번탭
         </Tabs.TabPanel>
-        <Tabs.TabPanel label="3번탭" tabId="3">
+        <Tabs.TabPanel label='3번탭' tabId='3'>
           3번탭
         </Tabs.TabPanel>
       </Tabs>

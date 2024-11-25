@@ -1,5 +1,5 @@
+import { ComponentPropsWithoutRef, ForwardedRef, forwardRef, memo, ReactNode, useId } from 'react';
 import Icon from '@breadlee/icons';
-import { ComponentPropsWithoutRef, ForwardedRef, ReactNode, forwardRef, memo, useId } from 'react';
 import { palette } from '@styles';
 import Typography, { TypographyProps } from '../Typography';
 import * as styles from './index.css';
@@ -15,11 +15,11 @@ const CheckBox = forwardRef(
 
     return (
       <div className={styles.container}>
-        <input {...otherProps} className={styles.input} id={uniqueId} ref={ref} type="checkbox" />
+        <input {...otherProps} className={styles.input} id={uniqueId} ref={ref} type='checkbox' />
         <label className={styles.label} htmlFor={uniqueId}>
           <span className={styles.typo}>
             {typeof label === 'string' ? (
-              <Typography color="onSurface" variant="B3" {...typographyProps}>
+              <Typography color='onSurface' variant='B3' {...typographyProps}>
                 {label}
               </Typography>
             ) : (
@@ -28,7 +28,7 @@ const CheckBox = forwardRef(
           </span>
         </label>
         <span className={styles.icon}>
-          <Icon color={palette.onPrimary} name="check" size={20} aria-hidden />
+          <Icon color={palette.onPrimary} name='check' size={20} aria-hidden />
         </span>
       </div>
     );

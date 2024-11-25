@@ -60,7 +60,7 @@ const TextField = forwardRef(
           >
             <Typography
               color={status === 'error' ? 'error' : status === 'success' || isFocus ? 'primary' : 'outline'}
-              component="label"
+              component='label'
               htmlFor={uniqueId}
               variant={isFocus || isValue ? 'D2' : 'B3'}
             >
@@ -81,7 +81,7 @@ const TextField = forwardRef(
         />
         {status && statusMessage && (
           <div className={styles.message}>
-            <Typography color={status === 'error' ? 'error' : 'primary'} variant="D2">
+            <Typography color={status === 'error' ? 'error' : 'primary'} variant='D2'>
               {statusMessage}
             </Typography>
           </div>

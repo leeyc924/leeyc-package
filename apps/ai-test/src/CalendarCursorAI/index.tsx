@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './index.css';
 
 // 스타일을 위한 CSS 파일

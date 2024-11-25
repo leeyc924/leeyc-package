@@ -1,4 +1,4 @@
-import { parseToString } from "./parse";
+import { parseToString } from './parse';
 
 interface ParsedQuery {
   [key: string]: string;

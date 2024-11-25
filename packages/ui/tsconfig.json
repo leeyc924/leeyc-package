@@ -1,14 +1,14 @@
 {
   "extends": "@breadlee/typescript/react.json",
-  "include": ["."],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@components": ["components/index.ts"],
-      "@types": ["types/index.ts"],
-      "@hooks/*": ["hooks/*"],
-      "@styles": ["styles/index.ts"],
+      "@components": ["src/components/index.ts"],
+      "@types": ["src/types/index.ts"],
+      "@hooks/*": ["src/hooks/*"],
+      "@styles": ["src/styles/index.ts"]
     }
   }
 }

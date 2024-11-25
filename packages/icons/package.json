@@ -2,27 +2,25 @@
   "name": "@breadlee/icons",
   "version": "0.0.8",
   "description": "leeyc package icon",
+  "license": "MIT",
   "sideEffects": false,
   "type": "module",
-  "license": "MIT",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup && fantasticon",
     "prebuild": "mkdir -p dist && bash scripts/generate-constants.sh",
+    "build": "tsup && fantasticon",
     "postbuild": "pnpm run minify && node scripts/postbuild.js",
     "minify": "cleancss -o ./dist/icons.css ./dist/icons.css"
   },
   "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/typescript": "workspace:*",
+    "@types/node": "^22.9.3",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "clean-css-cli": "^5.6.3",
@@ -32,5 +30,8 @@
     "react": "^18.3.1",
     "tsup": "^8.0.1",
     "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

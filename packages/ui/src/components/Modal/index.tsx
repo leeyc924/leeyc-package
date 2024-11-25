@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import FocusTrap from 'focus-trap-react';
 import Icon from '@breadlee/icons';
 import { classnames } from '@breadlee/utils';
 import useModalRenderHelper from '@hooks/useModalRenderHelper';
 import { palette } from '@styles';
-import Typography from '../Typography';
+import FocusTrap from 'focus-trap-react';
 import Button from '../Button';
+import Typography from '../Typography';
 import * as styles from './index.css';
 
 export interface ModalProps {
@@ -77,11 +77,11 @@ const Modal = ({
     ? null
     : createPortal(
         <FocusTrap open={isOpen}>
-          <div className={styles.container} role="dialog">
+          <div className={styles.container} role='dialog'>
             {hasDimmed && (
               <div
                 className={styles.dimmed}
-                role="presentation"
+                role='presentation'
                 tabIndex={0}
                 {...(useDimmedClose && { onClick: handleClose })}
               />
@@ -91,12 +91,12 @@ const Modal = ({
                 <header className={styles.header}>
                   {typeof title === 'string' ? (
                     <div className={styles.title}>
-                      <Typography color="onSurfaceVariant" component="h2" variant="H2" isEllipsisOneLine>
+                      <Typography color='onSurfaceVariant' component='h2' variant='H2' isEllipsisOneLine>
                         {title}
                       </Typography>
                       {subTitle && (
                         <span className={styles.subTitle}>
-                          <Typography color="onSurfaceVariant" component="h3" variant="D1" weight="regular">
+                          <Typography color='onSurfaceVariant' component='h3' variant='D1' weight='regular'>
                             {subTitle}
                           </Typography>
                         </span>
@@ -112,12 +112,12 @@ const Modal = ({
                 <footer className={styles.footer}>
                   <>
                     {cancelText && (
-                      <Button color="primary" size="xlarge" variant="outline" isFullWidth onClick={handleCancel}>
+                      <Button color='primary' size='xlarge' variant='outline' isFullWidth onClick={handleCancel}>
                         {cancelText}
                       </Button>
                     )}
                     {submitText && (
-                      <Button color="primary" size="xlarge" isFullWidth onClick={handleSubmit}>
+                      <Button color='primary' size='xlarge' isFullWidth onClick={handleSubmit}>
                         {submitText}
                       </Button>
                     )}
@@ -125,8 +125,8 @@ const Modal = ({
                 </footer>
               )}
               {useCloseButton && (
-                <button className={styles.close} type="button" onClick={handleClose}>
-                  <Icon color={palette.onSurfaceVariant} irName="닫기" name="close" size={16} />
+                <button className={styles.close} type='button' onClick={handleClose}>
+                  <Icon color={palette.onSurfaceVariant} irName='닫기' name='close' size={16} />
                 </button>
               )}
             </section>

@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-
 import * as styles from './index.css';
 
 const Calendar: React.FC = () => {

@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "dev": "storybook dev -p 5000",
-    "typecheck": "tsc -b tsconfig.json",
     "build": "storybook build",
-    "build:publish": "chromatic --project-token=chpt_98be66932c95ea8 -b build"
+    "build:publish": "chromatic --project-token=chpt_98be66932c95ea8 -b build",
+    "dev": "storybook dev -p 5000",
+    "typecheck": "tsc -b tsconfig.json"
   },
   "dependencies": {
     "@breadlee/icons": "workspace:^",

@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
 import Icon from '@breadlee/icons';
 import { classnames } from '@breadlee/utils';
 import useCalendarKeyEvent from '@hooks/useCalendarKeyEvent';
 import { palette } from '@styles';
+import dayjs, { Dayjs } from 'dayjs';
 import Typography from '../Typography';
 import * as styles from './index.css';
 import { isHoliday } from './lunarDay';
@@ -204,30 +204,30 @@ const Calendar = ({
     <div className={styles.container}>
       <div className={styles.header}>
         {!!onPrevClick && (
-          <button type="button" onClick={handlePrevClick}>
-            <Icon color={palette.onSurface} irName="전월 보기" name="arrow_left" size={24} />
+          <button type='button' onClick={handlePrevClick}>
+            <Icon color={palette.onSurface} irName='전월 보기' name='arrow_left' size={24} />
           </button>
         )}
-        <Typography color="onSurface">
+        <Typography color='onSurface'>
           {_currentViewDate.get('year')}년 {_currentViewDate.get('month') + 1}월
         </Typography>
         {!!onNextClick && (
-          <button type="button" onClick={handleNextClick}>
-            <Icon color={palette.onSurface} irName="명월 보기" name="arrow_right" size={24} />
+          <button type='button' onClick={handleNextClick}>
+            <Icon color={palette.onSurface} irName='명월 보기' name='arrow_right' size={24} />
           </button>
         )}
       </div>
-      <div className={styles.box} role="grid">
-        <div role="row-group">
-          <div className={styles.dayOfWeek} role="row">
+      <div className={styles.box} role='grid'>
+        <div role='row-group'>
+          <div className={styles.dayOfWeek} role='row'>
             {WEEK_TO_KR.map((text, index) => (
               <div className={styles.dayOfWeekItem} key={index}>
                 <Typography
                   aria-label={text}
                   color={index === 0 ? 'error' : index === 6 ? 'primary' : 'onSurface'}
                   tabIndex={-1}
-                  variant="D1"
-                  weight="bold"
+                  variant='D1'
+                  weight='bold'
                 >
                   {text}
                 </Typography>
@@ -235,9 +235,9 @@ const Calendar = ({
             ))}
           </div>
         </div>
-        <div className={styles.dateBox} ref={dateGridElRef} role="row-group">
+        <div className={styles.dateBox} ref={dateGridElRef} role='row-group'>
           {dayRowList.map((dateList, i) => (
-            <ul aria-rowindex={i} className={styles.dateItem['row']} key={i} role="row">
+            <ul aria-rowindex={i} className={styles.dateItem['row']} key={i} role='row'>
               {dateList.map((dateItem, j) => {
                 const selectedIndex = sortSelectedDateList?.findIndex(selected =>
                   selected.isSame(dayjs(dateItem.dateInfo), 'dates'),
@@ -264,8 +264,8 @@ const Calendar = ({
                       aria-selected={isSelected}
                       className={styles.dateItem['button']}
                       disabled={dateItem.disabled}
-                      role="gridcell"
-                      type="button"
+                      role='gridcell'
+                      type='button'
                       onKeyDown={onKeyDown}
                       onClick={() =>
                         useRange ? handleDateRangeClick(dateItem.dateInfo) : handleDateClick(dateItem.dateInfo)
@@ -274,8 +274,8 @@ const Calendar = ({
                       {...{ ...((isSelectedEnd || isSelectedStart) && { style: { background: palette.primary } }) }}
                     >
                       <Typography
-                        variant="D1"
-                        weight="bold"
+                        variant='D1'
+                        weight='bold'
                         color={
                           dateItem.disabled
                             ? 'disabled'

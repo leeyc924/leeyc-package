@@ -1,7 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import { Typography } from '@components';
 import { Meta, StoryObj } from '@storybook/react';
 import { palette } from '@styles';
-import { useEffect, useRef, useState } from 'react';
 
 interface PaletteProps {
   color?: keyof typeof palette;
@@ -39,10 +39,10 @@ const ColorItem = ({ className, name }: { name: string; className: string }) => 
         }}
       ></div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography color="Gray800" variant="D2">
+        <Typography color='Gray800' variant='D2'>
           {name}
         </Typography>
-        <Typography color="Gray800" variant="D2">
+        <Typography color='Gray800' variant='D2'>
           {color}
         </Typography>
       </div>
@@ -56,7 +56,7 @@ const ColorItemList = ({ title }: { title: string }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       <div>
-        <Typography color="Gray900" variant="H4">
+        <Typography color='Gray900' variant='H4'>
           {title}
         </Typography>
       </div>
@@ -72,16 +72,16 @@ const ColorItemList = ({ title }: { title: string }) => {
 const Palette = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
-      <ColorItemList title="Primary" />
-      <ColorItemList title="Secondary" />
-      <ColorItemList title="Tertiary" />
-      <ColorItemList title="Error" />
-      <ColorItemList title="Background" />
-      <ColorItemList title="Surface" />
-      <ColorItemList title="Blue" />
-      <ColorItemList title="Gray" />
-      <ColorItemList title="Black" />
-      <ColorItemList title="White" />
+      <ColorItemList title='Primary' />
+      <ColorItemList title='Secondary' />
+      <ColorItemList title='Tertiary' />
+      <ColorItemList title='Error' />
+      <ColorItemList title='Background' />
+      <ColorItemList title='Surface' />
+      <ColorItemList title='Blue' />
+      <ColorItemList title='Gray' />
+      <ColorItemList title='Black' />
+      <ColorItemList title='White' />
     </div>
   );
 };

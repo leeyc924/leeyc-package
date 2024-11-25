@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 import { classnames } from '@breadlee/utils';
-import { palette, font } from '../../styles';
+import { font, palette } from '../../styles';
 import * as styles from './index.css';
 
 type Tag =
