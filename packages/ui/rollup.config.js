@@ -51,7 +51,10 @@ const config = [
       vanillaExtractPlugin(),
       rollupResolve(),
       commonjs({ include: /node_modules/ }),
-      typescript({ useTsconfigDeclarationDir: true }),
+      typescript({
+        useTsconfigDeclarationDir: true,
+        tsconfig: './tsconfig.json',
+       }),
       peerDepsExternal(),
       preserveDirective(),
     ],

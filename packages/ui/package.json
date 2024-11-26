@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
-    "build": "rollup --config",
+    "build": "rollup --config --verbase",
     "postbuild": "node scripts/postbuild.js && pnpm run minify",
     "lint": "eslint . --fix",
     "minify": "cleancss -o ./dist/css/index.css ./dist/css/index.css",
