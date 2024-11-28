@@ -19,7 +19,6 @@
   "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/icons": "workspace:*",
-    "@breadlee/prettier": "workspace:*",
     "@breadlee/typescript": "workspace:*",
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.12",
