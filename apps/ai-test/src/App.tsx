@@ -1,7 +1,7 @@
-import CalendarImage from './CalendarCopilot';
+import CalendarMD from './CalendarMD';
 
 function App() {
-  return <CalendarImage />;
+  return <CalendarMD />;
 }
 
 export default App;
