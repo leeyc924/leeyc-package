@@ -1,55 +1,42 @@
 import React, { KeyboardEvent, useEffect, useState } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
 import {
-  addDays,
-  addMonths,
-  endOfMonth,
-  endOfWeek,
-  format,
-  isSameDay,
-  isSameMonth,
-  parse,
-  startOfMonth,
-  startOfWeek,
-  subMonths,
-} from 'date-fns';
-import { styles } from './index.css';
-
-const primary500 = '#006879';
-const primary100 = '#A9EDFF';
-const disabled = '#ddd';
-const gray300 = '#aaa';
+  calendarContainer,
+  cell,
+  disabledCell,
+  grid,
+  header,
+  monthYear,
+  navButton,
+  selectedCellRange,
+  selectedCellStartEnd,
+} from './index.css';
 
 const Calendar: React.FC = () => {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDates, setSelectedDates] = useState<Date[]>([]);
-  const [focusedDate, setFocusedDate] = useState<Date | null>(null);
-  const [dates, setDates] = useState<Date[]>([]);
+  const [currentMonth, setCurrentMonth] = useState<Dayjs>(dayjs());
+  const [selectedDates, setSelectedDates] = useState<Dayjs[]>([]);
+  const [focusedDate, setFocusedDate] = useState<Dayjs | null>(null);
 
   useEffect(() => {
-    const monthStart = startOfMonth(currentMonth);
-    const monthEnd = endOfMonth(monthStart);
-    const startDate = startOfWeek(monthStart);
-    const endDate = endOfWeek(monthEnd);
+    // 초기 포커스 설정
+    setFocusedDate(dayjs());
+  }, []);
 
-    const tempDates = [];
-    let day = startDate;
-    while (day <= endDate) {
-      tempDates.push(day);
-      day = addDays(day, 1);
-    }
-    setDates(tempDates);
-  }, [currentMonth]);
+  const startOfMonth = currentMonth.startOf('month');
+  const endOfMonth = currentMonth.endOf('month');
+  const startDay = startOfMonth.day();
+  const daysInMonth = currentMonth.daysInMonth();
 
   const prevMonth = () => {
-    setCurrentMonth(subMonths(currentMonth, 1));
+    setCurrentMonth(currentMonth.subtract(1, 'month'));
   };
 
   const nextMonth = () => {
-    setCurrentMonth(addMonths(currentMonth, 1));
+    setCurrentMonth(currentMonth.add(1, 'month'));
   };
 
-  const onDateClick = (day: Date) => {
-    if (!isSameMonth(day, currentMonth)) return;
+  const handleDateClick = (day: Dayjs) => {
+    if (day.month() !== currentMonth.month()) return;
     let newSelectedDates = [...selectedDates];
     if (newSelectedDates.length === 2) {
       newSelectedDates = [day];
@@ -62,100 +49,125 @@ const Calendar: React.FC = () => {
     setSelectedDates(newSelectedDates);
   };
 
-  const isInRange = (day: Date) => {
-    if (selectedDates.length < 2) return false;
-    const [start, end] = selectedDates.sort((a, b) => a.getTime() - b.getTime());
-    return day > start && day < end;
+  const isSelected = (day: Dayjs) => {
+    return selectedDates.some(selected => selected.isSame(day, 'day'));
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, day: Date, index: number) => {
-    let newIndex = index;
+  const isInRange = (day: Dayjs) => {
+    if (selectedDates.length !== 2) return false;
+    const [start, end] = selectedDates.sort((a, b) => a.diff(b));
+    return day.isAfter(start, 'day') && day.isBefore(end, 'day');
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, day: Dayjs) => {
+    let newFocus: Dayjs | null = null;
     switch (event.key) {
-      case 'ArrowLeft':
-        newIndex = index > 0 ? index - 1 : dates.length - 1;
-        setFocusedDate(dates[newIndex]);
-        break;
-      case 'ArrowRight':
-        newIndex = index < dates.length - 1 ? index + 1 : 0;
-        setFocusedDate(dates[newIndex]);
-        break;
       case 'ArrowUp':
-        newIndex = index - 7 >= 0 ? index - 7 : dates.length - (7 - index);
-        setFocusedDate(dates[newIndex]);
+        newFocus = day.subtract(7, 'day');
         break;
       case 'ArrowDown':
-        newIndex = index + 7 < dates.length ? index + 7 : (index + 7) % dates.length;
-        setFocusedDate(dates[newIndex]);
+        newFocus = day.add(7, 'day');
+        break;
+      case 'ArrowLeft':
+        newFocus = day.subtract(1, 'day');
+        break;
+      case 'ArrowRight':
+        newFocus = day.add(1, 'day');
+        break;
+      case 'Home':
+        newFocus = day.startOf('week');
+        break;
+      case 'End':
+        newFocus = day.endOf('week');
         break;
       default:
         break;
     }
+    if (newFocus) {
+      event.preventDefault();
+      setFocusedDate(newFocus);
+    }
+  };
+
+  const generateCalendar = () => {
+    const calendar = [];
+    let dayCounter = 1;
+    let nextMonthDay = 1;
+    for (let week = 0; week < 6; week++) {
+      const weekDays = [];
+      for (let day = 0; day < 7; day++) {
+        const currentDay = week * 7 + day;
+        let date: Dayjs;
+        let isCurrentMonth = true;
+        if (currentDay < startDay) {
+          date = startOfMonth
+            .subtract(1, 'month')
+            .date(startOfMonth.subtract(1, 'month').daysInMonth() - startDay + day + 1);
+          isCurrentMonth = false;
+        } else if (dayCounter > daysInMonth) {
+          date = endOfMonth.add(nextMonthDay, 'day');
+          nextMonthDay++;
+          isCurrentMonth = false;
+        } else {
+          date = startOfMonth.date(dayCounter);
+          dayCounter++;
+        }
+
+        const disabled = !isCurrentMonth;
+        const selectedStart = selectedDates[0]?.isSame(date, 'day');
+        const selectedEnd = selectedDates[1]?.isSame(date, 'day');
+        const inRange = isInRange(date);
+
+        let className = cell;
+        if (disabled) className = disabledCell;
+        if (selectedStart || selectedEnd) className = selectedCellStartEnd;
+        if (inRange) className = selectedCellRange;
+
+        weekDays.push(
+          <button
+            aria-label={date.format('YYYY년 MM월 DD일')}
+            aria-selected={isSelected(date)}
+            className={className}
+            disabled={disabled}
+            key={date.toString()}
+            tabIndex={focusedDate?.isSame(date, 'day') ? 0 : -1}
+            onClick={() => handleDateClick(date)}
+            onKeyDown={e => handleKeyDown(e, date)}
+          >
+            {date.date()}
+          </button>,
+        );
+      }
+      calendar.push(
+        <div className={grid} key={week}>
+          {weekDays}
+        </div>,
+      );
+    }
+    return calendar;
   };
 
   return (
-    <div className={styles.calendar}>
-      <div className={styles.header}>
-        <button aria-label='이전 달로 이동' className={styles.navButton} onClick={prevMonth}>
+    <div className={calendarContainer}>
+      <div className={header}>
+        <button aria-label='이전 달로 이동' className={navButton} onClick={prevMonth}>
           &lt;
         </button>
-        <div>
-          {format(currentMonth, 'yyyy')}년 {format(currentMonth, 'MMMM')}월
+        <div className={monthYear}>
+          {currentMonth.year()}년 {currentMonth.month() + 1}월
         </div>
-        <button aria-label='다음 달로 이동' className={styles.navButton} onClick={nextMonth}>
+        <button aria-label='다음 달로 이동' className={navButton} onClick={nextMonth}>
           &gt;
         </button>
       </div>
-      <div className={styles.days}>
+      <div className={grid}>
         {['일', '월', '화', '수', '목', '금', '토'].map(day => (
-          <div className={styles.day} key={day}>
+          <div className={cell} key={day}>
             {day}
           </div>
         ))}
       </div>
-      <div className={styles.dates}>
-        {dates.map((day, index) => {
-          const formattedDate = format(day, 'd');
-          const isDisabled = !isSameMonth(day, currentMonth);
-          const isSelected = selectedDates.some(selected => isSameDay(selected, day));
-          const inRange = isInRange(day);
-          const isFirstOrLast =
-            selectedDates.length === 2 && (isSameDay(day, selectedDates[0]) || isSameDay(day, selectedDates[1]));
-          let backgroundColor = '#fff';
-          let color = '#000';
-
-          if (isFirstOrLast) {
-            backgroundColor = primary500;
-            color = '#fff';
-          } else if (inRange) {
-            backgroundColor = primary100;
-            color = '#fff';
-          } else if (isDisabled) {
-            backgroundColor = disabled;
-            color = gray300;
-          }
-
-          if (isSelected) {
-            backgroundColor = primary500;
-            color = '#fff';
-          }
-
-          return (
-            <button
-              aria-label={format(day, 'yyyy-MM-dd')}
-              aria-selected={isSelected}
-              className={styles.date}
-              disabled={isDisabled}
-              key={day.toString()}
-              style={{ backgroundColor, color }}
-              tabIndex={focusedDate && isSameDay(day, focusedDate) ? 0 : -1}
-              onClick={() => onDateClick(day)}
-              onKeyDown={e => handleKeyDown(e, day, index)}
-            >
-              {formattedDate}
-            </button>
-          );
-        })}
-      </div>
+      {generateCalendar()}
     </div>
   );
 };
