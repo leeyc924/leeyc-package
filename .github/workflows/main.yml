@@ -19,6 +19,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_MODEL: "gpt-4o-mini" # Optional: defaults to "gpt-4"
-          REVIEW_MAX_COMMENTS: 10 # Optional: defaults to 10
-          REVIEW_PROJECT_CONTEXT: "React" # Optional
-          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
+          REVIEW_MAX_COMMENTS: 3 # Optional: defaults to 10
+          REVIEW_PROJECT_CONTEXT: "React with Typescript" # Optional
+          exclude: "**/*.json" # Optional: exclude patterns separated by commas
