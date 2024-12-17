@@ -7,8 +7,8 @@ interface TypographyProps {
   children?: ReactNode;
 }
 
-const Typography = ({}: TypographyProps) => {
-  return <span className={styles.root}>typography</span>;
+const Typography = ({ children }: TypographyProps) => {
+  return <span className={styles.root}>{children}</span>;
 };
 
 export default Typography;

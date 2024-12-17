@@ -2,7 +2,7 @@ import { createGlobalTheme } from '@vanilla-extract/css';
 import { themeColorContract } from '../contract/color.css';
 import { themeTypographyVariantContract, themeTypographyWeightContract } from '../contract/typography.css';
 
-createGlobalTheme("html[data-theme='albamon']", themeTypographyVariantContract, {
+createGlobalTheme("html[data-theme='dark']", themeTypographyVariantContract, {
   h1: {
     fontSize: '28px',
     lineHeight: '38px',
@@ -80,5 +80,3 @@ createGlobalTheme("html[data-theme='dark']", themeColorContract, {
   contentsbg: '#f2f4f7',
   primary: '#3366ff',
 });
-
-export default {};

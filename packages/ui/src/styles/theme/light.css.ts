@@ -80,5 +80,3 @@ createGlobalTheme("html[data-theme='light']", themeColorContract, {
   contentsbg: '#f2f4f7',
   primary: '#3366ff',
 });
-
-export default {};

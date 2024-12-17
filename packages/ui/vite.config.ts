@@ -1,4 +1,4 @@
-import path, { resolve } from 'path';
+import { extname, relative, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
@@ -6,21 +6,19 @@ import { glob } from 'glob';
 import preserveDirectives from 'rollup-preserve-directives';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import packageJson from './package.json';
-
-const external = [...Object.keys(packageJson.dependencies || {}), ...Object.keys(packageJson.peerDependencies || {})];
 
 export default defineConfig({
   plugins: [
     react(),
     dts({
-      rollupTypes: true,
+      rollupTypes: true, // index.d.ts로 병합
     }),
-    libInjectCss(), // css split
     tsconfigPaths(),
-    vanillaExtractPlugin(),
+    vanillaExtractPlugin({
+      identifiers: 'debug',
+    }),
     preserveDirectives(), // use client 유지
   ],
   build: {
@@ -29,30 +27,27 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [
+        ...Object.keys(packageJson.peerDependencies || {}),
+        ...Object.keys(packageJson.dependencies || {}),
+        '@vanilla-extract/css', // vanilla-extract/css 는 css 로 번들되기때문에 devDependencies 에 추가 후 chunk file 미 생성
+      ],
       input: Object.fromEntries(
         glob
           .sync(['src/**/*.{ts,tsx}'], {
-            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}', 'src/**/types.ts'],
+            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}', 'src/**/*.types.ts'],
           })
           .map(file => {
             return [
-              path.relative('src', file.slice(0, file.length - path.extname(file).length)),
+              relative('src', file.slice(0, file.length - extname(file).length)),
               fileURLToPath(new URL(file, import.meta.url)),
             ];
           }),
       ),
       output: {
-        assetFileNames(info) {
-          // return name?.replace(/\.css\.ts\.css$/, '.css') ?? '';
-          return 'css/[name][extname]';
-        },
-        entryFileNames(info) {
-          if (/.css$/.test(info.name)) {
-            return `${info.name.replace(/\.css$/, '.js')}`;
-          }
-          return '[name].js';
-        },
+        chunkFileNames: 'chunk/[name].js', // 외부모듈 관련 파일 chunk/모듈명.js 로 생성
+        assetFileNames: 'theme.css', // 전체 css는 dist/theme.css에 생성됩니다
+        entryFileNames: '[name].js', // 모든 파일의 이름을 [파일명].js로 지정합니다
       },
     },
   },
