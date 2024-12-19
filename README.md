@@ -38,9 +38,7 @@ pnpm build
 ![Storybook](https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=Storybook&logoColor=white)
 ![NextJs](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white)
 ![Node JS](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=whit)
-![Git Lab](https://img.shields.io/badge/gitlab-F05032?style=for-the-badge&logo=gitlab&logoColor=#FC6D26)
 ![Bash](https://img.shields.io/badge/BASH-F15A24?style=for-the-badge&logo=Zsh&logoColor=white)
-![Docker Compose](https://img.shields.io/badge/docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
 <br>
 <br>
 
