@@ -11,4 +11,5 @@ const Typography = ({ children }: TypographyProps) => {
   return <span className={styles.root}>{children}</span>;
 };
 
-export default Typography;
+export { Typography };
+export type { TypographyProps };

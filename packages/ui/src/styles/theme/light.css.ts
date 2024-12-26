@@ -41,7 +41,7 @@ createGlobalTheme("html[data-theme='light']", themeTypographyVariantContract, {
 });
 
 createGlobalTheme("html[data-theme='light']", themeTypographyWeightContract, {
-  medium: '600',
+  medium: '500',
   regular: '300',
   bold: '700',
 });

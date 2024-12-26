@@ -30,12 +30,12 @@ export default defineConfig({
       external: [
         ...Object.keys(packageJson.peerDependencies || {}),
         ...Object.keys(packageJson.dependencies || {}),
-        '@vanilla-extract/css', // vanilla-extract/css 는 css 로 번들되기때문에 devDependencies 에 추가 후 chunk file 미 생성
+        'react/jsx-runtime',
       ],
       input: Object.fromEntries(
         glob
           .sync(['src/**/*.{ts,tsx}'], {
-            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}', 'src/**/*.types.ts'],
+            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}'],
           })
           .map(file => {
             return [
@@ -47,7 +47,12 @@ export default defineConfig({
       output: {
         chunkFileNames: 'chunk/[name].js', // 외부모듈 관련 파일 chunk/모듈명.js 로 생성
         assetFileNames: 'theme.css', // 전체 css는 dist/theme.css에 생성됩니다
-        entryFileNames: '[name].js', // 모든 파일의 이름을 [파일명].js로 지정합니다
+        entryFileNames(info) {
+          if (!info.exports.length) {
+            return 'empty/[name].js';
+          }
+          return '[name].js'; // 모든 파일의 이름을 [파일명].js로 지정합니다
+        },
       },
     },
   },

@@ -42,7 +42,7 @@ createGlobalTheme("html[data-theme='dark']", themeTypographyVariantContract, {
 
 createGlobalTheme("html[data-theme='dark']", themeTypographyWeightContract, {
   medium: '500',
-  regular: '400',
+  regular: '300',
   bold: '700',
 });
 

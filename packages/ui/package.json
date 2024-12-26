@@ -17,19 +17,20 @@
   "scripts": {
     "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
     "build": "vite build",
+    "postbuild": "rm -rf dist/empty",
     "lint": "eslint . --fix",
     "storybook:build": "storybook build",
     "storybook:dev": "storybook dev -p 6000",
     "typecheck": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "dayjs": "^1.11.10"
+    "dayjs": "^1.11.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@breadlee/eslint": "workspace:*",
     "@breadlee/typescript": "workspace:*",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
     "@vanilla-extract/css": "^1.16.0",
     "@vanilla-extract/vite-plugin": "^4.0.4",
     "@vitejs/plugin-react": "^4.3.3",
@@ -41,7 +42,17 @@
     "vite-tsconfig-paths": "^5.1.0"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
-    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^19.0",
+    "react-dom": "^19.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   }
 }
