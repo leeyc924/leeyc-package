@@ -1,6 +1,6 @@
 {
-  "name": "@breadlee/typescript",
-  "version": "1.0.0",
+  "name": "@breadlee/config-typescript",
+  "version": "0.0.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -15,6 +15,6 @@
     "build": "node build.js"
   },
   "dependencies": {
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   }
 }

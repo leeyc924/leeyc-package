@@ -1,6 +1,6 @@
 {
-  "name": "@breadlee/eslint",
-  "version": "1.0.0",
+  "name": "@breadlee/config-eslint",
+  "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": {
@@ -34,18 +34,18 @@
     "@next/eslint-plugin-next": "^15.0.2",
     "@types/eslint__js": "^8.42.3",
     "@typescript-eslint/utils": "^8.13.0",
-    "eslint": "^9.15.0",
+    "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-turbo": "^2.2.3",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "eslint-plugin-storybook": "^0.11.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.11.0",
     "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
-    "@breadlee/typescript": "workspace:*",
+    "@breadlee/config-typescript": "workspace:*",
     "@types/eslint": "^9.6.1",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__eslintrc": "^2.1.2",

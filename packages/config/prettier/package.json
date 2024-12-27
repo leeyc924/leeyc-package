@@ -1,6 +1,6 @@
 {
-  "name": "@breadlee/prettier",
-  "version": "1.0.0",
+  "name": "@breadlee/config-prettier",
+  "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
-    "build": "node build.js"
+    "build": "node build.js",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
@@ -32,7 +33,7 @@
     "prettier-plugin-packagejson": "^2.5.3"
   },
   "devDependencies": {
-    "@breadlee/typescript": "workspace:*",
+    "@breadlee/config-typescript": "workspace:*",
     "esbuild": "^0.24.0"
   }
 }

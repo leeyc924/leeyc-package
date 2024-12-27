@@ -1,5 +1,5 @@
 {
-  "extends": "@breadlee/typescript/react.json",
+  "extends": "@breadlee/config-typescript/react.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

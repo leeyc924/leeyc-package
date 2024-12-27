@@ -49,7 +49,7 @@ export default defineConfig({
         assetFileNames: 'theme.css', // 전체 css는 dist/theme.css에 생성됩니다
         entryFileNames(info) {
           if (!info.exports.length) {
-            return 'empty/[name].js';
+            return 'rmdir/[name].js';
           }
           return '[name].js'; // 모든 파일의 이름을 [파일명].js로 지정합니다
         },

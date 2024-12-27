@@ -15,11 +15,9 @@
     "typecheck": "tsc -b tsconfig.json"
   },
   "devDependencies": {
-    "@breadlee/eslint": "workspace:^",
-    "@breadlee/typescript": "workspace:^",
-    "eslint": "^8.56.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
+    "@breadlee/config-eslint": "workspace:^",
+    "@breadlee/config-typescript": "workspace:^",
+    "tsup": "^8.0.1"
   },
   "publishConfig": {
     "access": "public"

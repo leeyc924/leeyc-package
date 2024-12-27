@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ForwardedRef, forwardRef, memo, ReactNode, useId } from 'react';
-import Icon from '@breadlee/icons';
 import { palette } from '@styles';
+import Icon from '@breadlee/icons';
 import Typography, { TypographyProps } from '../Typography';
 import * as styles from './index.css';
 

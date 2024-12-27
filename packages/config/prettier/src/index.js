@@ -21,8 +21,7 @@ const config = {
     '<BUILTIN_MODULES>',
     '^react.*$', // React 관련 import
     '<THIRD_PARTY_MODULES>', // 외부 모듈 import
-    '^@fe-core/(.*)$', // core 모듈 import
-    '^@fe-foundation/(.*)$', // foundation 모듈 import
+    '^@breadlee/(.*)$', // core 모듈 import
     '^@app/(.*)$', // 내부 절대경로 import
     '^[.]', // 상대 경로 import
   ],

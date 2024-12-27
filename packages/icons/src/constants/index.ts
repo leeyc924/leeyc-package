@@ -27,4 +27,4 @@ const icons = [
   'system_up',
 ] as const;
 
-export default icons
+export default icons;

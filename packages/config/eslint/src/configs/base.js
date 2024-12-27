@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import prettierConfig from 'eslint-config-prettier';
 //@ts-ignore
 import sortDestructureKeysPlugin from 'eslint-plugin-sort-destructure-keys';
-import turboPlugin from 'eslint-plugin-turbo';
+import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import { defineConfig } from '../utils.js';
@@ -16,8 +16,8 @@ export const base = defineConfig(
   prettierConfig,
   {
     plugins: {
-      turbo: turboPlugin,
       'sort-destructure-keys': sortDestructureKeysPlugin,
+      'unused-imports': unusedImports,
     },
   },
   {
@@ -36,7 +36,6 @@ export const base = defineConfig(
       },
     },
     rules: {
-      ...turboPlugin.configs.recommended.rules,
       'prefer-const': 'error',
       'no-console': 'warn',
       'no-prototype-builtins': 'warn',
@@ -47,7 +46,6 @@ export const base = defineConfig(
       'sort-destructure-keys/sort-destructure-keys': [2, { caseSensitive: false }],
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unnecessary-condition': 'off',
       '@typescript-eslint/no-var-requires': 'off',
@@ -55,6 +53,9 @@ export const base = defineConfig(
       '@typescript-eslint/no-loss-of-precision': 'off',
       '@typescript-eslint/no-empty-interface': 'warn',
       '@typescript-eslint/no-empty-object-type': 'warn',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-vars': 'warn',
+      'unused-imports/no-unused-imports': 'warn',
     },
   },
 );

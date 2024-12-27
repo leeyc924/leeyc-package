@@ -1,5 +1,5 @@
 {
-  "extends": "@breadlee/typescript/dom.json",
+  "extends": "@breadlee/config-typescript/dom.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

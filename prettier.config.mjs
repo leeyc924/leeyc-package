@@ -1,4 +1,4 @@
-import prettier from '@breadlee/prettier';
+import prettier from '@breadlee/config-prettier';
 
 /**
  * @see https://prettier.io/docs/en/configuration.html

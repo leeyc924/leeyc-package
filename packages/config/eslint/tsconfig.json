@@ -1,5 +1,5 @@
 {
-  "extends": ["@breadlee/typescript/base.json"],
+  "extends": ["@breadlee/config-typescript/base.json"],
   "compilerOptions": {
     "moduleResolution": "nodenext",
     "module": "NodeNext"

@@ -1,4 +1,4 @@
 {
-  "extends": ["@breadlee/typescript/base.json"],
+  "extends": ["@breadlee/config-typescript/base.json"],
   "exclude": ["apps", "packages", "node_modules"]
 }

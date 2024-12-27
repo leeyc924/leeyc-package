@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import Icon from '@breadlee/icons';
-import { classnames } from '@breadlee/utils';
 import useModalRenderHelper from '@hooks/useModalRenderHelper';
 import { palette } from '@styles';
 import FocusTrap from 'focus-trap-react';
+import Icon from '@breadlee/icons';
+import { classnames } from '@breadlee/utils';
 import Button from '../Button';
 import Typography from '../Typography';
 import * as styles from './index.css';
