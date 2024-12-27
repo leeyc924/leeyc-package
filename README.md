@@ -211,7 +211,7 @@ pnpm add -D react
 pnpm remove react
 ```
 
-### Nexus Publish
+### NPM Publish
 
 - 각각 패키지별 수정내역을 남기기 위해 `changeset`을 사용 합니다.
 
