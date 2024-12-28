@@ -23,8 +23,8 @@
     "@storybook/addon-links": "^7.6.13",
     "@storybook/react": "^7.6.13",
     "@storybook/react-vite": "^7.6.13",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "@vanilla-extract/vite-plugin": "^4.0.4",
     "chromatic": "^10.9.6",
     "storybook": "^7.6.15"
