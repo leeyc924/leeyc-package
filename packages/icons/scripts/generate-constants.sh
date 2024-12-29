@@ -26,4 +26,4 @@ done
   echo 'export default icons' >>"$constant_file"
 } >>"$constant_file"
 
-npx eslint --fix "$constant_file"
+npx prettier --write "$constant_file"
