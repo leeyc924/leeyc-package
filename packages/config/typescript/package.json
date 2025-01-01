@@ -1,20 +1,14 @@
 {
   "name": "@breadlee/config-typescript",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "type": "module",
-  "exports": {
-    "./*": "./dist/*"
-  },
   "files": [
-    "dist",
+    "base.json",
+    "build.json",
+    "dom.json",
+    "react.json",
+    "next.json",
     "README.md"
-  ],
-  "scripts": {
-    "prebuild": "[ ! -d dist ] && mkdir -p dist || rm -rf dist/*",
-    "build": "node build.js"
-  },
-  "dependencies": {
-    "typescript": "^5.7.2"
-  }
+  ]
 }

@@ -1,7 +1,7 @@
 # @breadlee/config-typescript
 
-## 1.0.0
+## 0.0.1
 
-### Major Changes
+### Patch Changes
 
 - init.
