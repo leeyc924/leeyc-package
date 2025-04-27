@@ -1,0 +1,12 @@
+{
+  "name": "@breadlee/config-biome",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "biome.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://nexus.mgt.comm.jobkorea.co.kr/repository/npm-store/"
+  }
+}
