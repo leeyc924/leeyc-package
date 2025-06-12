@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import '@breadlee/ui/reset.css';
-import '@breadlee/ui/theme.css';
+
 import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {

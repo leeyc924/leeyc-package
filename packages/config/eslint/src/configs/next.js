@@ -1,4 +1,14 @@
-import { compat, defineConfig } from '../utils.js';
-import { react } from './react.js';
+// @ts-ignore
+import nextPlugin from '@next/eslint-plugin-next';
+import { defineConfig } from '../utils.js';
 
-export const next = defineConfig(...react, ...compat.extends('next/core-web-vitals', 'next/typescript'));
+/** @type {import('typescript-eslint').Config} */
+export const next = defineConfig({
+  plugins: {
+    '@next/next': nextPlugin,
+  },
+  rules: {
+    ...nextPlugin.configs.recommended.rules,
+    ...nextPlugin.configs['core-web-vitals'].rules,
+  },
+});

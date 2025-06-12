@@ -9,6 +9,8 @@ import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import packageJson from './package.json';
 
+const themeComponentRegex = /theme\/src\/components\/(.*)/;
+
 export default defineConfig({
   plugins: [
     react(),
@@ -30,12 +32,13 @@ export default defineConfig({
       external: [
         ...Object.keys(packageJson.peerDependencies || {}),
         ...Object.keys(packageJson.dependencies || {}),
-        'react/jsx-runtime',
+        /^react\/.*/, // jsx/runtime 과 같은 종속성 제외
+        /react-dom\/.*/,
       ],
       input: Object.fromEntries(
         glob
           .sync(['src/**/*.{ts,tsx}'], {
-            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}'],
+            ignore: ['src/**/*.d.ts', 'src/**/*.stories.{ts,tsx}', 'src/**/*.types.ts'],
           })
           .map(file => {
             return [
@@ -45,13 +48,26 @@ export default defineConfig({
           }),
       ),
       output: {
-        chunkFileNames: 'chunk/[name].js', // 외부모듈 관련 파일 chunk/모듈명.js 로 생성
-        assetFileNames: 'theme.css', // 전체 css는 dist/theme.css에 생성됩니다
-        entryFileNames(info) {
-          if (!info.exports.length) {
-            return 'rmdir/[name].js';
+        chunkFileNames(info) {
+          if (!info.facadeModuleId && info.moduleIds[0]) {
+            const match = info.moduleIds[info.moduleIds.length - 1].match(themeComponentRegex);
+            if (match) {
+              const fileName = `components/${match[1].replace('tsx', 'js')}`;
+              return fileName;
+            }
           }
-          return '[name].js'; // 모든 파일의 이름을 [파일명].js로 지정합니다
+          return 'chunk/[name].js'; // 외부모듈 관련 파일 chunk/모듈명.js 로 생성
+        },
+        assetFileNames: 'theme.css', // 전체 css는 dist/theme.css에 생성
+        entryFileNames(info) {
+          const match = info.facadeModuleId?.match(themeComponentRegex);
+          if (match && info.exports.includes('Root')) {
+            return `rmdir/[name].js`;
+          }
+          if (!info.exports.length) {
+            return 'rmdir/[name].js'; // export가 없는 파일은 empty 에 생성후 postbuild에서 삭제
+          }
+          return '[name].js'; // 모든 파일의 이름을 [폴더/파일명].js로 지정
         },
       },
     },

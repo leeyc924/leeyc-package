@@ -1,4 +1,5 @@
 export * from './components/Typography';
+export * as Tabs from './components/Tabs';
 // export type * from './components/Typography';
 
 /** style */

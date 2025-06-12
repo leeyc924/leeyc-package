@@ -1,3 +1,12 @@
-export default function Home() {
-  return <div>Hello World</div>;
+export interface appProps {
+
 }
+
+const app = ({}: appProps) => {
+  return (
+    <div>d
+    </div>
+  )
+};
+
+export default app;

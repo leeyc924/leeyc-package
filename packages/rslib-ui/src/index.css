@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-\*: initial;
+  --color-gray-gray900: var(--color-gray900);
+  --color-gray-gray800: var(--color-gray800);
+  --color-gray-gray700: var(--color-gray700);
+  --color-gray-gray500: var(--color-gray500);
+  --color-gray-gray400: var(--color-gray400);
+  --color-gray-gray300: var(--color-gray300);
+  --color-gray-gray200: var(--color-gray200);
+  --color-gray-gray100: var(--color-gray100);
+  --color-gray-gray50: var(--color-gray50);
+  --color-white: var(--color-white);
+  --color-black: var(--color-black);
+  --color-blue-blue900: var(--color-blue-blue900);
+  --color-blue-blue700: var(--color-blue-blue700);
+  --color-blue-blue600: var(--color-blue-blue600);
+  --color-blue-blue300: var(--color-blue-blue300);
+  --color-blue-blue200: var(--color-blue-blue200);
+  --color-blue-blue100: var(--color-blue-blue100);
+  --color-blue-blue50: var(--color-blue-blue50);
+}
+
+:root {
+  --color-gray-gray900: '#222222';
+  --color-gray-gray800: '#444444';
+  --color-gray-gray700: '#6a6a6a';
+  --color-gray-gray500: '#9e9e9e';
+  --color-gray-gray400: '#b7b7b7';
+  --color-gray-gray300: '#d2d2d2';
+  --color-gray-gray200: '#e8e8e8';
+  --color-gray-gray100: '#f4f4f4';
+  --color-gray-gray50: '#f7f7f7';
+  --color-white: '#ffffff';
+  --color-black: '#000000';
+  --color-blue-blue900: '#0029ad';
+  --color-blue-blue700: '#003cff';
+  --color-blue-blue600: '#5288ff';
+  --color-blue-blue300: '#a3c0ff';
+  --color-blue-blue200: '#ccdcff';
+  --color-blue-blue100: '#e0eaff';
+  --color-blue-blue50: '#e0eaff';
+}

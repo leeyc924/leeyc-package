@@ -7,12 +7,13 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import { defineConfig } from '../utils.js';
 
+/** @type {import('typescript-eslint').Config} */
 export const base = defineConfig(
   {
     ignores: ['.next', 'dist', 'storybook-static', 'node_modules'],
   },
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  tseslint.configs.recommended,
   prettierConfig,
   {
     plugins: {
@@ -43,6 +44,7 @@ export const base = defineConfig(
       'no-case-declarations': 'off',
       'no-restricted-globals': 'off',
       'no-unused-expressions': 'off',
+      'no-extra-boolean-cast': 'error',
       'sort-destructure-keys/sort-destructure-keys': [2, { caseSensitive: false }],
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-unused-expressions': 'off',
@@ -54,6 +56,12 @@ export const base = defineConfig(
       '@typescript-eslint/no-empty-interface': 'warn',
       '@typescript-eslint/no-empty-object-type': 'warn',
       '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+        },
+      ],
       'unused-imports/no-unused-vars': 'warn',
       'unused-imports/no-unused-imports': 'warn',
     },

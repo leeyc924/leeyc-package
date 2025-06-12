@@ -24,21 +24,21 @@
     "typecheck": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "dayjs": "^1.11.10",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dayjs": "^1.11.13",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@breadlee/config-eslint": "workspace:*",
     "@breadlee/config-typescript": "workspace:*",
-    "@vanilla-extract/css": "^1.16.0",
-    "@vanilla-extract/vite-plugin": "^4.0.4",
-    "@vitejs/plugin-react": "^4.3.3",
-    "glob": "^11.0.0",
+    "@vanilla-extract/css": "^1.17.3",
+    "@vanilla-extract/vite-plugin": "^4.0.20",
+    "@vitejs/plugin-react": "^4.5.2",
+    "glob": "^11.0.2",
     "rollup-preserve-directives": "^1.1.3",
-    "vite": "^6.0.1",
-    "vite-plugin-dts": "^4.3.0",
-    "vite-tsconfig-paths": "^5.1.0"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
     "@types/react": "*",

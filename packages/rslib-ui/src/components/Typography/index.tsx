@@ -1,14 +1,13 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import * as styles from './styles.css';
 
 interface TypographyProps {
   children?: ReactNode;
 }
 
 const Typography = ({ children }: TypographyProps) => {
-  return <span className={styles.root}>{children}</span>;
+  return <span className='text-blue-blue100'>{children}</span>;
 };
 
 export { Typography };
