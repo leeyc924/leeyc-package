@@ -49,8 +49,5 @@
     "@types/eslint__eslintrc": "^2.1.2",
     "@types/node": "^22.15.31",
     "esbuild": "^0.24.2"
-  },
-  "publishConfig": {
-    "registry": "https://nexus.mgt.comm.jobkorea.co.kr/repository/npm-store/"
   }
 }
